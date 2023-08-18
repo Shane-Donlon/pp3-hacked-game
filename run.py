@@ -32,7 +32,7 @@ def word_checker():
     random_word = generate_random_word(PASSWORDS_DATA)
     number_of_guesses = 0
     print(f"The password is {len(random_word)} characters long")
-    while number_of_guesses >= 5:
+    while number_of_guesses <= 5:
         print(f"random word {random_word}")
         guess = input("What is your guess?")
         
@@ -46,9 +46,9 @@ def word_checker():
                 elif guess[i] in random_word:
                     print("In word wrong spot")
                 else:
-                    number_of_guesses +=1
                     print("not in word")
-        
+            number_of_guesses +=1
+            print(f"{number_of_guesses}")
         else:
             print("Word is not long enough")
         
