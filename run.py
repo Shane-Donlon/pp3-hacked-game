@@ -16,7 +16,9 @@ AMER_PASSWORDS = DATA.col_values(2)
 
 
 def generate_random_word(data):
-    """Runs random choice 3 times and returns random word as output"""
+    """Runs random choice 3 times and returns 
+    an array of characters in that word
+    EG ['1', 'g', 'd', 'D', 'f', 'g', 'd']"""
     
     i = 0
     while i < 3:
@@ -24,5 +26,32 @@ def generate_random_word(data):
         i += 1
     return word
 
-random_word = generate_random_word(PASSWORDS_DATA)
-print(random_word)
+
+
+def word_checker():
+    random_word = generate_random_word(PASSWORDS_DATA)
+    number_of_guesses = 0
+    print(f"The password is {len(random_word)} characters long")
+    while number_of_guesses >= 5:
+        print(f"random word {random_word}")
+        guess = input("What is your guess?")
+        
+        if guess == "q":
+            return False
+             
+        elif len(random_word) == len(guess):
+            for i in range(0, len(random_word)):
+                if guess[i] == random_word[i]:
+                    print("correct letter correct spot")
+                elif guess[i] in random_word:
+                    print("In word wrong spot")
+                else:
+                    number_of_guesses +=1
+                    print("not in word")
+        
+        else:
+            print("Word is not long enough")
+        
+      
+
+word_checker()
