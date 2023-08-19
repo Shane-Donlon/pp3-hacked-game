@@ -1,6 +1,7 @@
 import gspread
 from google.oauth2.service_account import Credentials
 import random
+from colorama import Fore, Back, Style, init
 SCOPE = [
     "https://www.googleapis.com/auth/spreadsheets",
     "https://www.googleapis.com/auth/drive.file",
@@ -29,12 +30,22 @@ def generate_random_word(data):
 
 
 def word_checker():
+    # resets styling back to default
+    init(autoreset=True)
+    
     random_word = generate_random_word(PASSWORDS_DATA)
+    print(random_word)
     number_of_guesses = 0
     print(f"The password is {len(random_word)} characters long")
+    CORRECT_LETTER = "\033[32m"
+    LETTER_IN_WORD = "\033[33m"
+    RESET_COLOURS = "\033[0m"
+
+           
     while number_of_guesses <= 5:
-        print(f"random word {random_word}")
-        guess = input("What is your guess?")
+        correct = 0 
+        # HELP
+        guess = input("\nWhat is your guess?")
         
         if guess == "q":
             return False
@@ -42,15 +53,18 @@ def word_checker():
         elif len(random_word) == len(guess):
             for i in range(0, len(random_word)):
                 if guess[i] == random_word[i]:
-                    print("correct letter correct spot")
+                    print(f"{CORRECT_LETTER}{guess[i]}{RESET_COLOURS}", end="")
+                    correct +=1
                 elif guess[i] in random_word:
-                    print("In word wrong spot")
+                    print(f"{LETTER_IN_WORD}{guess[i]}{RESET_COLOURS}",end="")
                 else:
-                    print("not in word")
+                    print(f"{guess[i]}", end="")
             number_of_guesses +=1
-            print(f"{number_of_guesses}")
-        else:
-            print("Word is not long enough")
+            if correct == len(random_word):
+                print("\nYou win")
+                return False
+            
+   
         
       
 
