@@ -31,7 +31,7 @@ def generate_random_word(data):
 
 
 
-def word_checker():
+def password_hacking_game():
     # resets styling back to default
     init(autoreset=True)
     
@@ -67,11 +67,6 @@ def word_checker():
                 return False
             
    
-        
-      
-
-# word_checker()
-   
 
 def password_checker(input_string):
     init(autoreset=True)
@@ -98,8 +93,24 @@ def password_checker(input_string):
     # removing password from memory
     del results
     del results_in_time
-    print("Your password has been deleted from memory")
+    print("")
+    print("Deleting Password..")
+    print("Your password has been deleted from memory..")
 
 
 
-password_checker(getpass("Enter the password to check: "))
+def main():
+    while True:
+        print("Welcome")
+        print("Press 1 to check your password strength")
+        print("Press 2 to play the password hacking game")
+        print("Press q to exit.")
+        response = input("\n").lower().strip()
+        
+        if response == "1":
+            password_checker(getpass("Enter the password to check: "))
+        elif response == "2":
+            password_hacking_game()
+        elif response == "q":
+            return False
+main()
