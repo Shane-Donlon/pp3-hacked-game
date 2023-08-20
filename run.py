@@ -2,6 +2,8 @@ import gspread
 from google.oauth2.service_account import Credentials
 import random
 from colorama import Fore, Back, Style, init
+from zxcvbn import zxcvbn
+
 SCOPE = [
     "https://www.googleapis.com/auth/spreadsheets",
     "https://www.googleapis.com/auth/drive.file",
@@ -68,4 +70,36 @@ def word_checker():
         
       
 
-word_checker()
+# word_checker()
+   
+
+def password_checker(input_string):
+    init(autoreset=True)
+    RESET_COLOURS = "\033[0m"
+    results = zxcvbn(input_string)
+    results_in_time = results.get("crack_times_display").get("online_throttling_100_per_hour")
+    # second includes "seconds" day includes "days" week includes "weeks"
+    if "second" in results_in_time or "minute" in results_in_time or "day" in results_in_time or "week" in results_in_time:
+        FOREGROUND = Fore.WHITE
+        BACKGROUND = Back.RED
+        # month includes "months year includes "years"
+    elif "month" in results_in_time:
+        FOREGROUND = Fore.YELLOW
+        BACKGROUND = Back.WHITE
+    elif "year" in results_in_time:
+        FOREGROUND = Fore.GREEN
+        BACKGROUND = Back.WHITE
+    else:
+        FOREGROUND = Fore.GREEN
+        BACKGROUND = Back.WHITE
+        
+    print(f"At a rate of 100 guesses per hour your password would take {FOREGROUND}{BACKGROUND}{results_in_time}{RESET_COLOURS} to crack")
+
+    # removing password from memory
+    del results
+    del results_in_time
+    print("Your password has been deleted from memory")
+
+
+
+password_checker(input("Enter the password to check: "))
