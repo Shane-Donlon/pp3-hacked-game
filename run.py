@@ -3,7 +3,7 @@ from google.oauth2.service_account import Credentials
 import random
 from colorama import Fore, Back, Style, init
 from zxcvbn import zxcvbn
-
+from getpass import getpass
 SCOPE = [
     "https://www.googleapis.com/auth/spreadsheets",
     "https://www.googleapis.com/auth/drive.file",
@@ -102,4 +102,4 @@ def password_checker(input_string):
 
 
 
-password_checker(input("Enter the password to check: "))
+password_checker(getpass("Enter the password to check: "))
