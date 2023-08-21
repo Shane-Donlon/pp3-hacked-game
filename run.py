@@ -33,6 +33,8 @@ def generate_random_word(data):
 
 def set_difficulty():
     while True:
+        # clear terminal
+        os.system('cls||clear')
         print("This game has 3 modes")
         print("Easy")
         print("Difficult")
@@ -156,8 +158,6 @@ def game():
 
 def main():
     while True:
-        # clear terminal
-        os.system('cls||clear')
         print("")
         print("Welcome")
         print("Press 1 to check your password strength")
