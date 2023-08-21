@@ -4,6 +4,8 @@ import random
 from colorama import Fore, Back, Style, init
 from zxcvbn import zxcvbn
 from getpass import getpass
+import os
+
 SCOPE = [
     "https://www.googleapis.com/auth/spreadsheets",
     "https://www.googleapis.com/auth/drive.file",
@@ -29,29 +31,69 @@ def generate_random_word(data):
         i += 1
     return word
 
-
-
-def password_hacking_game():
+def set_difficulty():
+    while True:
+        print("This game has 3 modes")
+        print("Easy")
+        print("Difficult")
+        print("Hard")
+        input_string = input("What difficulty do you want to set?").lower().strip()
+        new_array = []
+        if input_string == "easy":
+            for i in PASSWORDS_DATA:
+                if len(i) <=5:
+                    new_array.append(i)
+            return new_array
+        elif input_string == "difficult":
+            for i in PASSWORDS_DATA:
+                if len(i) >=6 and len(i) <=8:
+                    new_array.append(i)
+            return new_array        
+        elif input_string == "hard":
+            for i in PASSWORDS_DATA:
+                if len(i) >=9:
+                    new_array.append(i)
+            return new_array
+        elif input_string == "q":
+            return False
+        else:
+            # clear terminal
+            os.system('cls||clear')
+            print("You have selected an incorrect option")
+        
+def password_hacking_game(random_word):
     # resets styling back to default
     init(autoreset=True)
-    
-    random_word = generate_random_word(PASSWORDS_DATA)
-    print(random_word)
     number_of_guesses = 0
     print(f"The password is {len(random_word)} characters long")
     CORRECT_LETTER = "\033[32m"
     LETTER_IN_WORD = "\033[33m"
     RESET_COLOURS = "\033[0m"
-
+    SPECIAL_CHARACTERS = "[@_!#$%^&*()<>?}{~:]"
            
     while number_of_guesses <= 5:
+        print("")
+        print("Enter help for assistance")
         correct = 0 
-        # HELP
         guess = input("\nWhat is your guess?")
         
         if guess == "q":
             return False
-             
+        
+        elif guess == "help":
+            help_array = []
+            for i in range(len(random_word)):
+                if random_word[i].isalpha():
+                    help_array.append("Letter")
+                elif random_word[i].isnumeric():
+                    help_array.append("Number")
+                elif random_word[i] in SPECIAL_CHARACTERS:
+                    help_array.append("Special Character")
+            for char in help_array:
+                print(f"{char} ", end="")
+            print("")
+        
+        
         elif len(random_word) == len(guess):
             for i in range(0, len(random_word)):
                 if guess[i] == random_word[i]:
@@ -65,9 +107,13 @@ def password_hacking_game():
             if correct == len(random_word):
                 print("\nYou win")
                 return False
+        elif len(guess) < len(random_word):
+            print("Your guess word is not long enough")
+        elif len(guess) > len(random_word):
+            print("Your guess word is too long")
+        
             
-   
-
+        
 def password_checker(input_string):
     init(autoreset=True)
     RESET_COLOURS = "\033[0m"
@@ -97,10 +143,20 @@ def password_checker(input_string):
     print("Deleting Password..")
     print("Your password has been deleted from memory..")
 
-
+def game():
+    password_array = set_difficulty()
+    if password_array == False:
+        return
+    else:
+        print(f"pa{password_array}")
+        random_word = generate_random_word(password_array)
+        password_hacking_game(random_word)
+    
+    
 
 def main():
     while True:
+        print("")
         print("Welcome")
         print("Press 1 to check your password strength")
         print("Press 2 to play the password hacking game")
@@ -110,7 +166,8 @@ def main():
         if response == "1":
             password_checker(getpass("Enter the password to check: "))
         elif response == "2":
-            password_hacking_game()
+            game()
         elif response == "q":
             return False
 main()
+
