@@ -156,6 +156,8 @@ def game():
 
 def main():
     while True:
+        # clear terminal
+        os.system('cls||clear')
         print("")
         print("Welcome")
         print("Press 1 to check your password strength")
