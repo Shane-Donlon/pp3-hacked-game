@@ -95,7 +95,7 @@ def password_hacking_game(random_word):
                 elif random_word[i] in SPECIAL_CHARACTERS:
                     help_array.append("Special Character")
             for char in help_array:
-                print(f"{char} ", end="")
+                print(f"{char}, ", end="")
             print("")
         
         
@@ -111,6 +111,9 @@ def password_hacking_game(random_word):
             number_of_guesses +=1
             if correct == len(random_word):
                 print("\nYou win")
+                input("Press enter to continue")
+                # clear terminal
+                os.system('cls||clear')
                 return False
         elif len(guess) < len(random_word):
             print("Your guess word is not long enough")
