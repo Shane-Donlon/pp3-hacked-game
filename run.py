@@ -154,20 +154,44 @@ def game():
         random_word = generate_random_word(password_array)
         password_hacking_game(random_word)
     
+def password_in_list(input_string):
+    print("checking...")
+    on_list = False
+    for password in PASSWORDS_DATA:
+        if input_string == password:
+            on_list = True
+        
+    for password in AMER_PASSWORDS:
+        if input_string == password:
+            on_list = True
+        
+    if on_list == True:
+                print(f"Your password is on the list")
+                print(f"Please consider changing your password")
+    else:
+        print(f"Your password is NOT on the list")
+        input("Press enter to continue")
+        
     
+    print("Deleting password")
+    del input_string
+    print("Your password has been deleted")
 
 def main():
     while True:
         print("")
         print("Welcome")
         print("Press 1 to check your password strength")
-        print("Press 2 to play the password hacking game")
+        print("Press 2 to check your password against the hacked password list")
+        print("Press 3 to play the password hacking game")
         print("Press q to exit.")
         response = input("\n").lower().strip()
         
         if response == "1":
             password_checker(getpass("Enter the password to check: "))
         elif response == "2":
+            password_in_list(getpass("Enter the password to check: "))
+        elif response == "3":
             game()
         elif response == "q":
             return False
