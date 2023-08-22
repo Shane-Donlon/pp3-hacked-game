@@ -122,7 +122,7 @@ def password_checker(input_string):
     results = zxcvbn(input_string)
     results_in_time = results.get("crack_times_display").get("online_throttling_100_per_hour")
     # second includes "seconds" day includes "days" week includes "weeks"
-    if "second" in results_in_time or "minute" in results_in_time or "day" in results_in_time or "week" in results_in_time:
+    if "second" in results_in_time or "minute" in results_in_time or "hour" in results_in_time or "day" in results_in_time or "week" in results_in_time:
         FOREGROUND = Fore.WHITE
         BACKGROUND = Back.RED
         # month includes "months year includes "years"
