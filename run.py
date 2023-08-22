@@ -18,7 +18,7 @@ SHEET = GSPREAD_CLIENT.open("hacked-passwords")
 DATA = SHEET.worksheet("passwords")
 PASSWORDS_DATA = DATA.col_values(1)
 AMER_PASSWORDS = DATA.col_values(2)
-
+leaderboard_sheet = SHEET.worksheet("leaderboard")
 
 def generate_random_word(data):
     """Runs random choice 3 times and returns 
@@ -73,7 +73,7 @@ def password_hacking_game(random_word):
     RESET_COLOURS = "\033[0m"
     SPECIAL_CHARACTERS = "[@_!#$%^&*()<>?}{~:]"
            
-    while number_of_guesses <= 5:
+    while True:
         print("")
         print("Enter help for assistance")
         correct = 0 
@@ -114,8 +114,9 @@ def password_hacking_game(random_word):
                     print(f"{guess[i]}", end="")
             number_of_guesses +=1
             if correct == len(random_word):
-                print("\nYou win")
-                input("Press enter to continue")
+                print(f"\nYou win with number of guesses {number_of_guesses}")
+                print("Press Enter to continue")
+                leaderboard(number_of_guesses)
                 # clear terminal
                 os.system('cls||clear')
                 return False
@@ -188,6 +189,25 @@ def password_in_list(input_string):
     del input_string
     print("Your password has been deleted")
     input("Press enter to continue")
+    
+    
+def leaderboard(number_of_tries):
+    while True:
+        print("press q to skip")
+        input_name = input("Enter your Name to add to leaderboard").lower().strip()
+        print(input_name)
+        if input_name == "q":
+            return False
+        else:
+            leaderboard_names = leaderboard_sheet.col_values(1)[1:]
+            if input_name in leaderboard_names:
+                    print("name already exists")
+            else:
+                leaderboard_sheet.append_row([input_name,number_of_tries])
+                return False
+            
+        
+    
 def main():
     while True:
         print("")
