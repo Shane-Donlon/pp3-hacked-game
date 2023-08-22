@@ -84,12 +84,16 @@ def password_hacking_game(random_word):
         
         elif guess == "help":
             help_array = []
+            print("letter (upper) = uppercase")
+            print("letter (lower) = lowercase")
+            print("Number = 0-9")
+            print(f"Special Character = {SPECIAL_CHARACTERS}")
             for i in range(len(random_word)):
                 if random_word[i].isalpha():
                     if random_word[i].isupper():
-                        help_array.append("Upper Case Letter")
+                        help_array.append("Letter (upper)")
                     else:
-                        help_array.append("Lower Case Letter")
+                        help_array.append("Letter (lower)")
                 elif random_word[i].isnumeric():
                     help_array.append("Number")
                 elif random_word[i] in SPECIAL_CHARACTERS:
