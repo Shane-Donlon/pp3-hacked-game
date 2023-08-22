@@ -154,6 +154,7 @@ def password_checker(input_string):
     print("")
     print("Deleting Password..")
     print("Your password has been deleted from memory..")
+    input("Press enter to continue")
 
 def game():
     password_array = set_difficulty()
@@ -186,7 +187,7 @@ def password_in_list(input_string):
     print("Deleting password")
     del input_string
     print("Your password has been deleted")
-
+    input("Press enter to continue")
 def main():
     while True:
         print("")
