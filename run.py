@@ -204,6 +204,8 @@ def leaderboard(number_of_tries, skill_level):
             else:
                 leaderboard_sheet.append_row([input_name,number_of_tries,skill_level])
                 return False
+            
+
 def difficulty_for_leaderboard(correct_word):
         difficulty = ""
         if len(correct_word) <=5:
@@ -215,9 +217,31 @@ def difficulty_for_leaderboard(correct_word):
         elif len(correct_word) >=9:
                 difficulty = "hard"
                 return difficulty
+            
+def get_leaderboard():
+        # print('Press 1 to see the "Easy" leaderboard')
+        # print('Press 2 to see the "Easy" leaderboard')
+        # print('Press 3 to see the "Easy" leaderboard')
+        selection = input("Enter your selection here: ").lower().strip()
+        leaderboard_raw_data = leaderboard_sheet.get_all_values()[1:]
+        updated_leaderboard_table = []
+        if selection == "1":
+            for row in leaderboard_raw_data:
+                if row[2] == "easy":
+                    updated_leaderboard_table.append(row)
+        elif selection == "2":
+                for row in leaderboard_raw_data:
+                    if row[2] == "difficult":
+                        updated_leaderboard_table.append(row)
+                        
+        elif selection == "3":
+                for row in leaderboard_raw_data:
+                    if row[2] == "hard":
+                        updated_leaderboard_table.append(row)                
+        return updated_leaderboard_table
 
         
-    
+
 def main():
     while True:
         print("")
@@ -236,5 +260,7 @@ def main():
             game()
         elif response == "q":
             return False
-main()
+# main()
+
+get_leaderboard()
 
