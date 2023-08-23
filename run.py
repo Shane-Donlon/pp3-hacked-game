@@ -41,6 +41,7 @@ def set_difficulty():
         print("Easy")
         print("Difficult")
         print("Hard")
+        print("press 4 to view the leaderboard")
         input_string = input("What difficulty do you want to set?").lower().strip()
         new_array = []
         if input_string == "easy":
@@ -58,6 +59,8 @@ def set_difficulty():
                 if len(i) >=9:
                     new_array.append(i)
             return new_array
+        elif input_string == "4":
+            get_leaderboard()        
         elif input_string == "q":
             return False
         else:
@@ -118,7 +121,6 @@ def password_hacking_game(random_word):
                 print(f"\nYou win with number of guesses {number_of_guesses}")
                 print("Press Enter to continue")
                 leaderboard(number_of_guesses, difficulty_for_leaderboard(random_word))
-                # clear terminal
                 os.system('cls||clear')
                 return False
         elif len(guess) < len(random_word):
@@ -254,7 +256,7 @@ def get_leaderboard():
 def display_leaderboard(raw_data):
         row_headers = leaderboard_sheet.get_all_records()[0]
         print(tabulate(raw_data, headers=row_headers, tablefmt="fancy_grid", showindex="always"))
-
+        input("Press enter to continue to main menu")
 def main():
     while True:
         print("")
@@ -273,7 +275,7 @@ def main():
             game()
         elif response == "q":
             return False
-# main()
+main()
 
-get_leaderboard()
+
 
