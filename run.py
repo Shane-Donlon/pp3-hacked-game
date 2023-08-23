@@ -71,8 +71,7 @@ def password_hacking_game(random_word):
     CORRECT_LETTER = "\033[32m"
     LETTER_IN_WORD = "\033[33m"
     RESET_COLOURS = "\033[0m"
-    SPECIAL_CHARACTERS = "[@_!#$%^&*()<>?}{~:]"
-           
+    SPECIAL_CHARACTERS = "[@_!#$%^&*()<>?}{~:]"       
     while True:
         print("")
         print("Enter help for assistance")
@@ -116,7 +115,7 @@ def password_hacking_game(random_word):
             if correct == len(random_word):
                 print(f"\nYou win with number of guesses {number_of_guesses}")
                 print("Press Enter to continue")
-                leaderboard(number_of_guesses)
+                leaderboard(number_of_guesses, difficulty_for_leaderboard(random_word))
                 # clear terminal
                 os.system('cls||clear')
                 return False
@@ -191,7 +190,7 @@ def password_in_list(input_string):
     input("Press enter to continue")
     
     
-def leaderboard(number_of_tries):
+def leaderboard(number_of_tries, skill_level):
     while True:
         print("press q to skip")
         input_name = input("Enter your Name to add to leaderboard").lower().strip()
@@ -203,9 +202,20 @@ def leaderboard(number_of_tries):
             if input_name in leaderboard_names:
                     print("name already exists")
             else:
-                leaderboard_sheet.append_row([input_name,number_of_tries])
+                leaderboard_sheet.append_row([input_name,number_of_tries,skill_level])
                 return False
-            
+def difficulty_for_leaderboard(correct_word):
+        difficulty = ""
+        if len(correct_word) <=5:
+            difficulty = "easy"                
+            return difficulty
+        elif len(correct_word) >=6 and len(correct_word) <=8:
+                difficulty = "difficult"
+                return difficulty
+        elif len(correct_word) >=9:
+                difficulty = "hard"
+                return difficulty
+
         
     
 def main():
