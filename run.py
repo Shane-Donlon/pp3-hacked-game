@@ -5,6 +5,8 @@ from colorama import Fore, Back, Style, init
 from zxcvbn import zxcvbn
 from getpass import getpass
 import os
+from tabulate import tabulate
+
 
 SCOPE = [
     "https://www.googleapis.com/auth/spreadsheets",
@@ -219,28 +221,39 @@ def difficulty_for_leaderboard(correct_word):
                 return difficulty
             
 def get_leaderboard():
-        # print('Press 1 to see the "Easy" leaderboard')
-        # print('Press 2 to see the "Easy" leaderboard')
-        # print('Press 3 to see the "Easy" leaderboard')
-        selection = input("Enter your selection here: ").lower().strip()
-        leaderboard_raw_data = leaderboard_sheet.get_all_values()[1:]
-        updated_leaderboard_table = []
-        if selection == "1":
-            for row in leaderboard_raw_data:
-                if row[2] == "easy":
-                    updated_leaderboard_table.append(row)
-        elif selection == "2":
-                for row in leaderboard_raw_data:
-                    if row[2] == "difficult":
-                        updated_leaderboard_table.append(row)
-                        
-        elif selection == "3":
-                for row in leaderboard_raw_data:
-                    if row[2] == "hard":
-                        updated_leaderboard_table.append(row)                
-        return updated_leaderboard_table
 
+        running = True
+        while running:
+            print('Press 1 to see the "Easy" leaderboard')
+            print('Press 2 to see the "Difficult" leaderboard')
+            print('Press 3 to see the "Hard" leaderboard')
+            selection = input("Enter your selection here: ").lower().strip()
+            leaderboard_raw_data = leaderboard_sheet.get_all_values()[1:]
+            updated_leaderboard_table = []
+            if selection == "1":
+                for row in leaderboard_raw_data:
+                    if row[2] == "easy":
+                        updated_leaderboard_table.append(row)
+                running = False
+            elif selection == "2":
+                    for row in leaderboard_raw_data:
+                        if row[2] == "difficult":
+                            updated_leaderboard_table.append(row)
+                    running = False        
+            elif selection == "3":
+                    for row in leaderboard_raw_data:
+                        if row[2] == "hard":
+                            updated_leaderboard_table.append(row)
+                    running = False
+            else:
+                print("Invalid option")
         
+        updated_leaderboard_table.sort(key=lambda number_of_guesses: number_of_guesses[1])
+        display_leaderboard(updated_leaderboard_table)
+            
+def display_leaderboard(raw_data):
+        row_headers = leaderboard_sheet.get_all_records()[0]
+        print(tabulate(raw_data, headers=row_headers, tablefmt="fancy_grid", showindex="always"))
 
 def main():
     while True:
