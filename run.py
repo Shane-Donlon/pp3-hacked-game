@@ -150,7 +150,6 @@ def password_checker(input_string):
         # month includes "months year includes "years"
     elif "month" in results_in_time:
         FOREGROUND = Fore.YELLOW
-        BACKGROUND = Back.WHITE
     elif "year" in results_in_time:
         FOREGROUND = Fore.GREEN
         BACKGROUND = Back.WHITE
@@ -158,10 +157,8 @@ def password_checker(input_string):
         FOREGROUND = Fore.GREEN
         BACKGROUND = Back.WHITE
 
-    print
-    (f"At a rate of 100 guesses per hour your password would take \
-        {FOREGROUND}{BACKGROUND}{results_in_time}{RESET_COLOURS} to crack")
-
+    print(f"At a rate of 100 guesses per hour your password would \
+take {FOREGROUND}{BACKGROUND}{results_in_time}{RESET_COLOURS} to crack")
     # removing password from memory
     del results
     del results_in_time
@@ -170,6 +167,7 @@ def password_checker(input_string):
     print("Your password has been deleted from memory..")
     input("Press enter to continue")
     os.system('cls||clear')
+
 
 def game():
     password_array = set_difficulty()
@@ -204,6 +202,7 @@ def password_in_list(input_string):
     print("Your password has been deleted")
     input("Press enter to continue")
     os.system('cls||clear')
+
 
 def leaderboard(number_of_tries, skill_level):
     while True:
@@ -271,6 +270,7 @@ def display_leaderboard(raw_data):
     print(tabulate(raw_data, headers=row_headers, tablefmt="fancy_grid"))
     input("Press enter to continue to main menu")
     os.system('cls||clear')
+
 
 def main():
     while True:
