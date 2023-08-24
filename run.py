@@ -44,7 +44,8 @@ def set_difficulty():
         print("Difficult")
         print("Hard")
         print("press 4 to view the leaderboard")
-        input_string = input("What difficulty do you want to set?").lower().strip()
+        input_string = input(
+            "What difficulty do you want to set?").lower().strip()
         new_array = []
         if input_string == "easy":
             for i in PASSWORDS_DATA:
@@ -122,7 +123,8 @@ def password_hacking_game(random_word):
             if correct == len(random_word):
                 print(f"\nYou win with number of guesses {number_of_guesses}")
                 print("Press Enter to continue")
-                leaderboard(number_of_guesses, difficulty_for_leaderboard(random_word))
+                leaderboard(number_of_guesses, difficulty_for_leaderboard(
+                    random_word))
                 os.system('cls||clear')
                 return False
         elif len(guess) < len(random_word):
@@ -135,9 +137,14 @@ def password_checker(input_string):
     init(autoreset=True)
     RESET_COLOURS = "\033[0m"
     results = zxcvbn(input_string)
-    results_in_time = results.get("crack_times_display").get("online_throttling_100_per_hour")
+    results_in_time = results.get("crack_times_display").get(
+        "online_throttling_100_per_hour")
     # second includes "seconds" day includes "days" week includes "weeks"
-    if "second" in results_in_time or "minute" in results_in_time or "hour" in results_in_time or "day" in results_in_time or "week" in results_in_time:
+    if ("second" in results_in_time
+        or "minute" in results_in_time
+        or "hour" in results_in_time
+        or "day" in results_in_time
+            or "week" in results_in_time):
         FOREGROUND = Fore.WHITE
         BACKGROUND = Back.RED
         # month includes "months year includes "years"
@@ -151,7 +158,9 @@ def password_checker(input_string):
         FOREGROUND = Fore.GREEN
         BACKGROUND = Back.WHITE
 
-    print(f"At a rate of 100 guesses per hour your password would take {FOREGROUND}{BACKGROUND}{results_in_time}{RESET_COLOURS} to crack")
+    print
+    (f"At a rate of 100 guesses per hour your password would take \
+        {FOREGROUND}{BACKGROUND}{results_in_time}{RESET_COLOURS} to crack")
 
     # removing password from memory
     del results
@@ -164,7 +173,7 @@ def password_checker(input_string):
 
 def game():
     password_array = set_difficulty()
-    if password_array == False:
+    if password_array is False:
         return
     else:
         print(f"pa{password_array}")
@@ -183,7 +192,7 @@ def password_in_list(input_string):
         if input_string == password:
             on_list = True
 
-    if on_list == True:
+    if on_list is True:
         print(f"Your password is on the list")
         print(f"Please consider changing your password")
     else:
@@ -199,7 +208,8 @@ def password_in_list(input_string):
 def leaderboard(number_of_tries, skill_level):
     while True:
         print("press q to skip")
-        input_name = input("Enter your Name to add to leaderboard").lower().strip()
+        input_name = input(
+            "Enter your Name to add to leaderboard").lower().strip()
         print(input_name)
         if input_name == "q":
             return False
@@ -208,7 +218,8 @@ def leaderboard(number_of_tries, skill_level):
             if input_name in leaderboard_names:
                 print("name already exists")
             else:
-                leaderboard_sheet.append_row([input_name, number_of_tries, skill_level])
+                leaderboard_sheet.append_row(
+                    [input_name, number_of_tries, skill_level])
                 return False
 
 
@@ -266,7 +277,8 @@ def main():
         print("")
         print("Welcome")
         print("Press 1 to check your password strength")
-        print("Press 2 to check your password against the hacked password list")
+        print(
+            "Press 2 to check your password against the hacked password list")
         print("Press 3 to play the password hacking game")
         print("Press q to exit.")
         response = input("\n").lower().strip()
@@ -279,4 +291,6 @@ def main():
             game()
         elif response == "q":
             return False
+
+
 main()
