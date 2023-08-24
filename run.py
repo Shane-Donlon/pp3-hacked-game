@@ -169,7 +169,7 @@ def password_checker(input_string):
     print("Deleting Password..")
     print("Your password has been deleted from memory..")
     input("Press enter to continue")
-
+    os.system('cls||clear')
 
 def game():
     password_array = set_difficulty()
@@ -203,7 +203,7 @@ def password_in_list(input_string):
     del input_string
     print("Your password has been deleted")
     input("Press enter to continue")
-
+    os.system('cls||clear')
 
 def leaderboard(number_of_tries, skill_level):
     while True:
@@ -270,7 +270,7 @@ def display_leaderboard(raw_data):
     row_headers = leaderboard_sheet.get_all_records()[0]
     print(tabulate(raw_data, headers=row_headers, tablefmt="fancy_grid"))
     input("Press enter to continue to main menu")
-
+    os.system('cls||clear')
 
 def main():
     while True:
