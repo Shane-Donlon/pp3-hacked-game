@@ -25,8 +25,8 @@ leaderboard_sheet = SHEET.worksheet("leaderboard")
 
 def generate_random_word(data):
     """Runs random choice 3 times and returns
-    an array of characters in that word
-    EG ['1', 'g', 'd', 'D', 'f', 'g', 'd']"""
+    a random word. The random word is then sent
+    to password_hacking_game function"""
 
     i = 0
     while i < 3:
@@ -36,6 +36,8 @@ def generate_random_word(data):
 
 
 def set_difficulty():
+    """Creates an array of words based on the
+    Google sheet data, to pass into generate_random_word function"""
     while True:
         # clear terminal
         os.system('cls||clear')
@@ -73,6 +75,9 @@ def set_difficulty():
 
 
 def password_hacking_game(random_word):
+    """Main game logic
+    inherits word from
+    generate_random_word function"""
     # resets styling back to default
     init(autoreset=True)
     number_of_guesses = 0
@@ -134,6 +139,8 @@ def password_hacking_game(random_word):
 
 
 def password_checker(input_string):
+    """Takes in a password (string), and returns
+    a print statement on the time taken to crack password"""
     init(autoreset=True)
     RESET_COLOURS = "\033[0m"
     results = zxcvbn(input_string)
@@ -171,6 +178,7 @@ take {FOREGROUND}{BACKGROUND}{results_in_time}{RESET_COLOURS} to crack")
 
 
 def game():
+    """Orders functions for the password_hacking_game"""
     password_array = set_difficulty()
     if password_array is False:
         return
@@ -181,6 +189,8 @@ def game():
 
 
 def password_in_list(input_string):
+    """Takes in a password then verifies
+    the data against Google Sheets data"""
     print("checking...")
     on_list = False
     for password in PASSWORDS_DATA:
@@ -206,6 +216,9 @@ def password_in_list(input_string):
 
 
 def leaderboard(number_of_tries, skill_level):
+    """Validates user input against Google Sheets
+    once valid appends the row to Google Sheets
+    takes skill_level from set difficulty function"""
     while True:
         print("press q to skip")
         input_name = input(
@@ -224,6 +237,9 @@ def leaderboard(number_of_tries, skill_level):
 
 
 def difficulty_for_leaderboard(correct_word):
+    """Determines the difficulty of the user selection
+    appends this data to the leaderboard in Google Sheets
+    linked to function leaderboard function"""
     difficulty = ""
     if len(correct_word) <= 5:
         difficulty = "easy"
@@ -237,6 +253,8 @@ def difficulty_for_leaderboard(correct_word):
 
 
 def get_leaderboard():
+    """Creates and sorts an array to pass into
+    display_leaderboard function """
     running = True
     while running:
         print('Press 1 to see the "Easy" leaderboard')
@@ -267,6 +285,8 @@ def get_leaderboard():
 
 
 def display_leaderboard(raw_data):
+    """Used to print the table takes in data from
+    the get_leaderboard function"""
     row_headers = leaderboard_sheet.get_all_records()[0]
     print(tabulate(raw_data, headers=row_headers, tablefmt="fancy_grid"))
     input("Press enter to continue to main menu")
@@ -274,6 +294,9 @@ def display_leaderboard(raw_data):
 
 
 def password_generator():
+    """Used to generate password based on user input
+    also uses the password_checker function
+    to print the time to crack password"""
     while True:
         password_input = input("Enter the maximum length\
 of the password in numbers: ")
