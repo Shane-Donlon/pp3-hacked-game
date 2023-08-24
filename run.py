@@ -6,7 +6,7 @@ from zxcvbn import zxcvbn
 from getpass import getpass
 import os
 from tabulate import tabulate
-
+from password_generator import PasswordGenerator
 
 SCOPE = [
     "https://www.googleapis.com/auth/spreadsheets",
@@ -150,6 +150,7 @@ def password_checker(input_string):
         # month includes "months year includes "years"
     elif "month" in results_in_time:
         FOREGROUND = Fore.YELLOW
+        BACKGROUND = Back.BLACK
     elif "year" in results_in_time:
         FOREGROUND = Fore.GREEN
         BACKGROUND = Back.WHITE
@@ -272,6 +273,29 @@ def display_leaderboard(raw_data):
     os.system('cls||clear')
 
 
+def password_generator():
+    while True:
+        password_input = input("Enter the maximum length\
+of the password in numbers: ")
+        password_length = password_input.isnumeric()
+        message = "Please enter positive integer values only or q to exit"
+        if password_input == "q":
+            print("Exiting...")
+            return
+        elif password_input == "0":
+            print(message)
+        elif password_length:
+            password_input = int(password_input)
+            password = PasswordGenerator().non_duplicate_password(
+                password_input)
+            print("Your password will be printed below")
+            print(password)
+            password_checker(password)
+            return
+        else:
+            print(message)
+
+
 def main():
     while True:
         print("")
@@ -280,6 +304,7 @@ def main():
         print(
             "Press 2 to check your password against the hacked password list")
         print("Press 3 to play the password hacking game")
+        print("Press 4 to create a new password")
         print("Press q to exit.")
         response = input("\n").lower().strip()
 
@@ -289,6 +314,8 @@ def main():
             password_in_list(getpass("Enter the password to check: "))
         elif response == "3":
             game()
+        elif response == "4":
+            password_generator()
         elif response == "q":
             return False
 
