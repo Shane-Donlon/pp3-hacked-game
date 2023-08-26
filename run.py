@@ -99,7 +99,7 @@ def password_hacking_game(random_word):
             print("letter (lower) = lowercase")
             print("Number = 0-9")
             print(f"Special Character = {SPECIAL_CHARACTERS}")
-            for i in range(len(random_word)):
+            for i, _ in enumerate(random_word):
                 if random_word[i].isalpha():
                     if random_word[i].isupper():
                         help_array.append("Letter (upper)")
@@ -109,12 +109,13 @@ def password_hacking_game(random_word):
                     help_array.append("Number")
                 elif random_word[i] in SPECIAL_CHARACTERS:
                     help_array.append("Special Character")
+            
             for char in help_array:
                 print(f"{char}, ", end="")
             print("")
 
         elif len(random_word) == len(guess):
-            for i in range(0, len(random_word)):
+            for i, _ in enumerate(random_word):
                 if guess[i] == random_word[i]:
                     print(f"{CORRECT_LETTER}{guess[i]}{RESET_COLOURS}", end="")
                     correct += 1
