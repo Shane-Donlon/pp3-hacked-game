@@ -39,8 +39,6 @@ def set_difficulty():
     """Creates an array of words based on the
     Google sheet data, to pass into generate_random_word function"""
     while True:
-        # clear terminal
-        os.system('cls||clear')
         print("This game has 3 modes")
         print("Easy")
         print("Difficult")
@@ -84,7 +82,7 @@ def password_hacking_game(random_word):
     print(f"The password is {len(random_word)} characters long")
     CORRECT_LETTER = "\033[32m"
     LETTER_IN_WORD = "\033[33m"
-    RESET_COLOURS = "\033[0m"
+    RESET_COLOURS = Style.RESET_ALL
     SPECIAL_CHARACTERS = "[@_!#$%^&*()<>?}{~:]"
     while True:
         print("")
@@ -142,7 +140,7 @@ def password_checker(input_string):
     """Takes in a password (string), and returns
     a print statement on the time taken to crack password"""
     init(autoreset=True)
-    RESET_COLOURS = "\033[0m"
+    RESET_COLOURS = Style.RESET_ALL
     results = zxcvbn(input_string)
     results_in_time = results.get("crack_times_display").get(
         "online_throttling_100_per_hour")
@@ -309,12 +307,15 @@ of the password in numbers: ")
             print(message)
         elif password_length:
             password_input = int(password_input)
-            password = PasswordGenerator().non_duplicate_password(
+            if password_input > 40:
+                print("Password max length is set to 40 characters long")
+            else:
+                password = PasswordGenerator().non_duplicate_password(
                 password_input)
-            print("Your password will be printed below")
-            print(password)
-            password_checker(password)
-            return
+                print("Your password will be printed below")
+                print(password)
+                password_checker(password)
+                return
         else:
             print(message)
 
@@ -341,6 +342,7 @@ def main():
             password_generator()
         elif response == "q":
             return False
-
+        else:
+            print("You have selected an incorrect option")
 
 main()
