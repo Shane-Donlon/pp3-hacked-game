@@ -1,10 +1,10 @@
+import random
+import os
 import gspread
 from google.oauth2.service_account import Credentials
-import random
 from colorama import Fore, Back, Style, init
 from zxcvbn import zxcvbn
 from getpass import getpass
-import os
 from tabulate import tabulate
 from password_generator import PasswordGenerator
 
@@ -182,6 +182,7 @@ def game():
     if password_array is False:
         return
     else:
+        game_instructions()
         print(f"pa{password_array}")
         random_word = generate_random_word(password_array)
         password_hacking_game(random_word)
@@ -320,7 +321,60 @@ of the password in numbers: ")
         else:
             print(message)
 
+def game_instructions():
+    os.system('cls||clear')
+    init(autoreset=True)
+    RESET_COLOURS = Style.RESET_ALL
+    CORRECT_LETTER = "\033[32m"
+    LETTER_IN_WORD = "\033[33m"
+    correct_word = "Password12!"
+    guess = "Pass12!orxy"
+    print("The objective of the game is to correctly guess the hacked password in the least amount of guesses")
+    print("Your guess must be the same length as the password (You will be told the length of the password)")
+    print("Incorrect length password tries and help commands will not be considered a guess")
+    print(f"Correct character in the correct place will be highlighted in {CORRECT_LETTER}green {RESET_COLOURS}")
+    print(f"The correct character in the wrong place will be highlighted in {LETTER_IN_WORD}yellow {RESET_COLOURS}")
+    print(f"If the character is not in the word it will be printed as this white colour")
+    
+    for i, _ in enumerate(correct_word):
+            if guess[i] == correct_word[i]:
+                print(f"{CORRECT_LETTER}{guess[i]}{RESET_COLOURS}", end="")
+            elif guess[i] in correct_word:
+                print(f"{LETTER_IN_WORD}{guess[i]}{RESET_COLOURS}", end="")
+            else:
+                print(f"{guess[i]}", end="")
+                
+                
+    help_array = []
+    SPECIAL_CHARACTERS = "[@_!#$%^&*()<>?}{~:]"
 
+    print("")
+    print("")
+    print("A help option is also available, enter help as you guess.")
+    print("Help Menu")
+    print("letter (upper) = uppercase")
+    print("letter (lower) = lowercase")
+    print("Number = 0-9")
+    print(f"Special Character = {SPECIAL_CHARACTERS}")
+    print("")
+    print("Help Reveal:")
+    for i, _ in enumerate(correct_word):
+        if correct_word[i].isalpha():
+            if correct_word[i].isupper():
+                help_array.append("Letter (upper)")
+            else:
+                help_array.append("Letter (lower)")
+        elif correct_word[i].isnumeric():
+            help_array.append("Number")
+        elif correct_word[i] in SPECIAL_CHARACTERS:
+            help_array.append("Special Character")
+            
+    for char in help_array:
+        print(f"{char}, ", end="")
+    print("")
+    print(f"Correct Word = {CORRECT_LETTER}{correct_word}")
+    input("Press enter to continue")
+    os.system('cls||clear')
 def main():
     while True:
         print("")
@@ -346,4 +400,5 @@ def main():
         else:
             print("You have selected an incorrect option")
 
-main()
+if __name__ == "__main__":
+    main()
