@@ -192,21 +192,26 @@ def password_in_list(input_string):
     """Takes in a password then verifies
     the data against Google Sheets data"""
     print("checking...")
+    RESET_COLOURS = Style.RESET_ALL
     on_list = False
     for password in PASSWORDS_DATA:
         if input_string == password:
+            BACKGROUND = Back.RED
+            
             on_list = True
 
     for password in AMER_PASSWORDS:
+        BACKGROUND = Back.RED
         if input_string == password:
             on_list = True
 
     if on_list is True:
-        print(f"Your password is on the list")
-        print(f"Please consider changing your password")
+        print(f"{BACKGROUND}Your password is on the list")
+        print(f"Please consider changing your password {RESET_COLOURS}")
     else:
-        print(f"Your password is NOT on the list")
-        input("Press enter to continue")
+        BACKGROUND = Back.GREEN
+        print(f"{BACKGROUND}Your password is NOT on the list {RESET_COLOURS}")
+
 
     print("Deleting password")
     del input_string
@@ -375,6 +380,7 @@ def game_instructions():
     print(f"Correct Word = {CORRECT_LETTER}{correct_word}")
     input("Press enter to continue")
     os.system('cls||clear')
+
 def main():
     while True:
         print("")
