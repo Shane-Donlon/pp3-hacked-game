@@ -81,4 +81,16 @@ It is comprised of
 4. The desired leader board table will print (sorted lowest guesses to highest)
    - ![Leader board printed in terminal](assets/documentation/leader_board_game_preview.jpg)
 
-### Creating a new password:
+### Password Generator
+
+1. From the main menu enter option "4" and press Enter
+2. Enter the length of the password greater than 1
+   - 0 length passwords
+   - Negative integer passwords
+   - 1 length passwords will display an error
+3. Copy the password from terminal
+4. Press Enter to return to the main menu
+
+Example Output:
+
+- ![Password Generator output from terminal](assets/documentation/password_generator_output.jpg)
