@@ -112,7 +112,7 @@ def password_hacking_game(random_word):
                     help_array.append("Number")
                 elif random_word[i] in SPECIAL_CHARACTERS:
                     help_array.append("Special Character")
-            
+
             for char in help_array:
                 print(f"{char}, ", end="")
             print("")
@@ -147,7 +147,6 @@ def password_checker(input_string):
     a print statement on the time taken to crack password"""
     init(autoreset=True)
 
-    
     if input_string == "" or len(input_string) == 0:
         print("Please enter a valid password")
         new_input = getpass("Enter the password to check: ")
@@ -157,7 +156,7 @@ def password_checker(input_string):
         RESET_COLOURS = Style.RESET_ALL
         results = zxcvbn(input_string)
         results_in_time = results.get("crack_times_display").get(
-        "online_throttling_100_per_hour")
+            "online_throttling_100_per_hour")
         if ("second" in results_in_time
             or "minute" in results_in_time
             or "hour" in results_in_time
@@ -214,7 +213,7 @@ def password_in_list(input_string):
         on_list = False
         for password in PASSWORDS_DATA:
             if input_string == password:
-                BACKGROUND = Back.RED   
+                BACKGROUND = Back.RED
                 on_list = True
         for password in AMER_PASSWORDS:
             BACKGROUND = Back.RED
@@ -223,10 +222,12 @@ def password_in_list(input_string):
 
         if on_list is True:
             print(f"{BACKGROUND}Your password is on the list{RESET_COLOURS}")
-            print(f"{BACKGROUND}Please consider changing your password {RESET_COLOURS}")
+            print(f"{BACKGROUND}Please consider changing your\
+password {RESET_COLOURS}")
         else:
             BACKGROUND = Back.GREEN
-            print(f"{BACKGROUND}Your password is NOT on the list {RESET_COLOURS}")
+            print(f"{BACKGROUND}Your password is NOT on the list\
+{RESET_COLOURS}")
 
     print("Deleting password")
     del input_string
@@ -291,7 +292,7 @@ def get_leaderboard():
                 if row[2] == "easy":
                     updated_leaderboard_table.append(row)
             updated_leaderboard_table.sort(key=lambda num_guess: num_guess[1])
-            display_leaderboard(updated_leaderboard_table)            
+            display_leaderboard(updated_leaderboard_table)
             running = False
         elif selection == "2":
             for row in leaderboard_raw_data:
@@ -313,7 +314,6 @@ def get_leaderboard():
             print("Invalid option")
 
 
-
 def display_leaderboard(raw_data):
     """Used to print the table takes in data from
     the get_leaderboard function"""
@@ -331,7 +331,8 @@ def password_generator():
         password_input = input("Enter the maximum length \
 of the password in numbers: ")
         password_length = password_input.isnumeric()
-        message = "Please enter positive integer values greater than 1 only or q to exit"
+        message = "Please enter positive integer values\
+greater than 1 only or q to exit"
         if password_input == "q":
             print("Exiting...")
             return
@@ -343,13 +344,14 @@ of the password in numbers: ")
                 print("Password max length is set to 40 characters long")
             else:
                 password = PasswordGenerator().non_duplicate_password(
-                password_input)
+                    password_input)
                 print("Your password will be printed below")
                 print(password)
                 password_checker(password)
                 return
         else:
             print(message)
+
 
 def game_instructions():
     os.system('cls||clear')
@@ -359,22 +361,27 @@ def game_instructions():
     LETTER_IN_WORD = "\033[33m"
     correct_word = "Password12!"
     guessed = "Pass12!orxy"
-    print("The objective of the game is to correctly guess the hacked password in the least amount of guesses")
-    print("Your guess must be the same length as the password (You will be told the length of the password)")
-    print("Incorrect length password tries and help commands will not be considered a guess")
-    print(f"Correct character in the correct place will be highlighted in {CORRECT_LETTER}green {RESET_COLOURS}")
-    print(f"The correct character in the wrong place will be highlighted in {LETTER_IN_WORD}yellow {RESET_COLOURS}")
-    print(f"If the character is not in the word it will be printed as this white colour")
+    print("The objective of the game is to correctly guess the hacked\
+password in the least amount of guesses")
+    print("Your guess must be the same length as the password \
+(You will be told the length of the password)")
+    print("Incorrect length password tries and help commands \
+will not be considered a guess")
+    print(f"Correct character in the correct place will be \
+highlighted in {CORRECT_LETTER}green {RESET_COLOURS}")
+    print(f"The correct character in the wrong place will be \
+highlighted in {LETTER_IN_WORD}yellow {RESET_COLOURS}")
+    print(f"If the character is not in the word it will be\
+printed as this white colour")
     print("Enter q as a guess at any point to exit the game")
     for i, _ in enumerate(correct_word):
-            if guessed[i] == correct_word[i]:
-                print(f"{CORRECT_LETTER}{guessed[i]}{RESET_COLOURS}", end="")
-            elif guessed[i] in correct_word:
-                print(f"{LETTER_IN_WORD}{guessed[i]}{RESET_COLOURS}", end="")
-            else:
-                print(f"{guessed[i]}", end="")
-                
-                
+        if guessed[i] == correct_word[i]:
+            print(f"{CORRECT_LETTER}{guessed[i]}{RESET_COLOURS}", end="")
+        elif guessed[i] in correct_word:
+            print(f"{LETTER_IN_WORD}{guessed[i]}{RESET_COLOURS}", end="")
+        else:
+            print(f"{guessed[i]}", end="")
+
     help_array = []
     SPECIAL_CHARACTERS = "[@_!#$%^&*()<>?}{~:]"
 
@@ -398,13 +405,14 @@ def game_instructions():
             help_array.append("Number")
         elif correct_word[i] in SPECIAL_CHARACTERS:
             help_array.append("Special Character")
-            
+
     for char in help_array:
         print(f"{char}, ", end="")
     print("")
     print(f"Correct Word = {CORRECT_LETTER}{correct_word}")
     input("Press enter to continue")
     os.system('cls||clear')
+
 
 def main():
     while True:
@@ -430,6 +438,7 @@ def main():
             return False
         else:
             print("You have selected an incorrect option")
+
 
 if __name__ == "__main__":
     main()
