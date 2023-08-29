@@ -568,3 +568,9 @@ Abbreviations used:
     <td>Confirmed</td>
 </tbody>
 </table>
+
+## Credits:
+
+- [Printing on same line python](https://www.tutorialspoint.com/how-to-print-in-same-line-in-python)
+- [Hacked Password List](https://parade.com/living/most-common-passwords)
+- [Wordle](https://www.nytimes.com/games/wordle/index.html) - Main inspiration for the game
