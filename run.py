@@ -246,6 +246,8 @@ def leaderboard(number_of_tries, skill_level):
         print(input_name)
         if input_name == "q":
             return False
+        elif input_name == "" or len(input_name) == 0:
+            print("Please enter a valid name")
         else:
             leaderboard_names = leaderboard_sheet.col_values(1)[1:]
             if input_name in leaderboard_names:
