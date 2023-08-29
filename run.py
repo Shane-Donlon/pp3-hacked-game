@@ -44,6 +44,7 @@ def set_difficulty():
         print("Difficult")
         print("Hard")
         print("press 4 to view the leaderboard")
+        print("press q to exit")
         input_string = input(
             "What difficulty do you want to set?").lower().strip()
         new_array = []
