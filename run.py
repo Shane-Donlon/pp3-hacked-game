@@ -100,6 +100,8 @@ def password_hacking_game(random_word):
             print("letter (lower) = lowercase")
             print("Number = 0-9")
             print(f"Special Character = {SPECIAL_CHARACTERS}")
+            print("")
+            print("Help reveal below:")
             for i, _ in enumerate(random_word):
                 if random_word[i].isalpha():
                     if random_word[i].isupper():
