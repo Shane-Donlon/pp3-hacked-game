@@ -102,23 +102,6 @@ Example Output:
 MM = Main Menu
 PS = Password Strength Checking Tool (option 1 main menu)
 PL = Password List
-| Testing Description | Expected Output | Result |
-| ------------------- | --------------------------- | --------- |
-| Main Menu Loads | User is presented with menu | Confirmed |
-| MM Option 1 | User is presented with password strength checking tool| Confirmed|
-|MM Option 2 |User is presented with checking password against passowrd list |Confirmed |
-|MM Option 3 |User is presented with a game |Confirmed |
-|MM Option 4 |User can create a new password |Confirmed |
-|MM Option Q |Application ends |Confirmed |
-|All other input |Presents Error loops to start |Confirmed |
-|PS |User inputs a correct password to verify |Printed output of password strength |Confirmed
-|PS |User inputs a null or 0 length password |User is presented with error and asked for password |Confirmed
-|test | | |
-| | | |
-| | | |
-| | | |
-| | | |
-| | | | |
 
 <table>
 <thead>
@@ -541,9 +524,3 @@ PL = Password List
     <td>Confirmed</td>
 </tbody>
 </table>
-  <!-- <tr>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-  </tr> -->
