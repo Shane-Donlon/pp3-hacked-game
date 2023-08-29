@@ -18,7 +18,7 @@ It is comprised of
 - As a user I want to play a game to educate me on common passwords
 - As a user I want to be able to create strong passwords and verify the strength of the new password generated
 
-## How to use:
+## How to use & Features:
 
 1. Go to https://pp3-hacked-game-932b8166abb0.herokuapp.com/
 2. Wait for application to load
@@ -102,6 +102,12 @@ It is comprised of
 Example Output:
 
 - ![Password Generator output from terminal](assets/documentation/password_generator_output.jpg)
+
+## Technologies used:
+
+- [Python](https://www.python.org/) The main language used in the terminal application
+- [JavaScript](https://en.wikipedia.org/wiki/JavaScript) Used in the template to run the terminal
+- [HTML](https://en.wikipedia.org/wiki/HTML) used in the template to present the terminal
 
 ## Testing
 
