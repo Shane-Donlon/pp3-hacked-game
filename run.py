@@ -320,7 +320,7 @@ of the password in numbers: ")
             print(message)
         elif password_length:
             password_input = int(password_input)
-            if password_input > 40:
+            if password_input > 40 or password_input <= 0:
                 print("Password max length is set to 40 characters long")
             else:
                 password = PasswordGenerator().non_duplicate_password(
