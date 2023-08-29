@@ -105,9 +105,15 @@ No errors found
 
 ### Manual Testing
 
-MM = Main Menu
-PS = Password Strength Checking Tool (option 1 main menu)
-PL = Password List
+Command Prompt was used to run the application locally, and updates were tested again after deployment to Heroku
+
+Abbreviations used:
+
+- MM = Main Menu
+
+- PS = Password Strength Checking Tool (option 1 main menu)
+
+- PL = Password List (option 2 main menu)
 
 <table>
 <thead>
