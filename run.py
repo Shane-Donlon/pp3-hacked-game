@@ -124,6 +124,8 @@ def password_hacking_game(random_word):
                 else:
                     print(f"{guess[i]}", end="")
             number_of_guesses += 1
+            print("")
+            print(f"Number of guesses = {number_of_guesses}")
             if correct == len(random_word):
                 print(f"\nYou win with number of guesses {number_of_guesses}")
                 print("Press Enter to continue")
@@ -183,6 +185,7 @@ def game():
         return
     else:
         game_instructions()
+        os.system('cls||clear')
         print(f"pa{password_array}")
         random_word = generate_random_word(password_array)
         password_hacking_game(random_word)
@@ -303,14 +306,14 @@ def password_generator():
     also uses the password_checker function
     to print the time to crack password"""
     while True:
-        password_input = input("Enter the maximum length\
+        password_input = input("Enter the maximum length \
 of the password in numbers: ")
         password_length = password_input.isnumeric()
-        message = "Please enter positive integer values only or q to exit"
+        message = "Please enter positive integer values greater than 1 only or q to exit"
         if password_input == "q":
             print("Exiting...")
             return
-        elif password_input == "0":
+        elif password_input == "0" or password_input == "1":
             print(message)
         elif password_length:
             password_input = int(password_input)
@@ -333,21 +336,21 @@ def game_instructions():
     CORRECT_LETTER = "\033[32m"
     LETTER_IN_WORD = "\033[33m"
     correct_word = "Password12!"
-    guess = "Pass12!orxy"
+    guessed = "Pass12!orxy"
     print("The objective of the game is to correctly guess the hacked password in the least amount of guesses")
     print("Your guess must be the same length as the password (You will be told the length of the password)")
     print("Incorrect length password tries and help commands will not be considered a guess")
     print(f"Correct character in the correct place will be highlighted in {CORRECT_LETTER}green {RESET_COLOURS}")
     print(f"The correct character in the wrong place will be highlighted in {LETTER_IN_WORD}yellow {RESET_COLOURS}")
     print(f"If the character is not in the word it will be printed as this white colour")
-    
+    print("Enter q as a guess at any point to exit the game")
     for i, _ in enumerate(correct_word):
-            if guess[i] == correct_word[i]:
-                print(f"{CORRECT_LETTER}{guess[i]}{RESET_COLOURS}", end="")
-            elif guess[i] in correct_word:
-                print(f"{LETTER_IN_WORD}{guess[i]}{RESET_COLOURS}", end="")
+            if guessed[i] == correct_word[i]:
+                print(f"{CORRECT_LETTER}{guessed[i]}{RESET_COLOURS}", end="")
+            elif guessed[i] in correct_word:
+                print(f"{LETTER_IN_WORD}{guessed[i]}{RESET_COLOURS}", end="")
             else:
-                print(f"{guess[i]}", end="")
+                print(f"{guessed[i]}", end="")
                 
                 
     help_array = []
