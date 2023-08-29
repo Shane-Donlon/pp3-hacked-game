@@ -10,6 +10,14 @@ It is comprised of
 
 ![Site Preview on desktop laptop tablet and mobile](assets/documentation/website_preview.jpg)
 
+## User Stories
+
+- As a user I want a site where I can check the strength of my password
+- As a user I want a site where I can verify my password against common passwords
+- As a user I want to play a game to educate me on using weak passwords
+- As a user I want to play a game to educate me on common passwords
+- As a user I want to be able to create strong passwords and verify the strength of the new password generated
+
 ## How to use:
 
 1. Go to https://pp3-hacked-game-932b8166abb0.herokuapp.com/
