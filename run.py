@@ -280,6 +280,7 @@ def get_leaderboard():
         print('Press 1 to see the "Easy" leaderboard')
         print('Press 2 to see the "Difficult" leaderboard')
         print('Press 3 to see the "Hard" leaderboard')
+        print('Press q to return to the menu')
         selection = input("Enter your selection here: ").lower().strip()
         leaderboard_raw_data = leaderboard_sheet.get_all_values()[1:]
         updated_leaderboard_table = []
@@ -287,21 +288,28 @@ def get_leaderboard():
             for row in leaderboard_raw_data:
                 if row[2] == "easy":
                     updated_leaderboard_table.append(row)
+            updated_leaderboard_table.sort(key=lambda num_guess: num_guess[1])
+            display_leaderboard(updated_leaderboard_table)            
             running = False
         elif selection == "2":
             for row in leaderboard_raw_data:
                 if row[2] == "difficult":
                     updated_leaderboard_table.append(row)
+            updated_leaderboard_table.sort(key=lambda num_guess: num_guess[1])
+            display_leaderboard(updated_leaderboard_table)
             running = False
         elif selection == "3":
             for row in leaderboard_raw_data:
                 if row[2] == "hard":
                     updated_leaderboard_table.append(row)
+            updated_leaderboard_table.sort(key=lambda num_guess: num_guess[1])
+            display_leaderboard(updated_leaderboard_table)
             running = False
+        elif selection == "q":
+            return
         else:
             print("Invalid option")
-        updated_leaderboard_table.sort(key=lambda num_guess: num_guess[1])
-        display_leaderboard(updated_leaderboard_table)
+
 
 
 def display_leaderboard(raw_data):
