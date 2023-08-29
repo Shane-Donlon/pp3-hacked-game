@@ -97,6 +97,12 @@ Example Output:
 
 ## Testing
 
+### Automated Testing
+
+No errors found
+
+- ![Python Linter Results](assets/documentation/automated_testing.jpg)
+
 ### Manual Testing
 
 MM = Main Menu
