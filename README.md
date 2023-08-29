@@ -121,6 +121,12 @@ Example Output:
 - [tabulate](https://pypi.org/project/tabulate/) Used to create the leader board tables
 - [random password generator](https://pypi.org/project/random-password-generator/) used to generate random passwords
 
+### Other Tools:
+
+- [GitHub](https://github.com/): Used to host the application source code.
+- [VSCode](https://code.visualstudio.com/) Visual Studio Code: used to edit the application source code.
+- [Heroku](https://www.heroku.com/): Used to host the application
+
 ## Testing
 
 ### Automated Testing
