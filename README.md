@@ -105,9 +105,21 @@ Example Output:
 
 ## Technologies used:
 
+### Languages:
+
 - [Python](https://www.python.org/) The main language used in the terminal application
 - [JavaScript](https://en.wikipedia.org/wiki/JavaScript) Used in the template to run the terminal
 - [HTML](https://en.wikipedia.org/wiki/HTML) used in the template to present the terminal
+
+### Libraries and packages used:
+
+- [gspread](https://github.com/burnash/gspread) Google API for GoogleSheets
+- [google.oauth2.service_account](https://developers.google.com/identity/protocols/oauth2/service-account) Account used to share the worksheets with
+- [colorama](https://pypi.org/project/colorama/) used to add color for visual feedback
+- [zxcvbn](https://pypi.org/project/zxcvbn/) used for password strength
+- [getpass](https://docs.python.org/3/library/getpass.html) used to hide the password input
+- [tabulate](https://pypi.org/project/tabulate/) Used to create the leader board tables
+- [random password generator](https://pypi.org/project/random-password-generator/) used to generate random passwords
 
 ## Testing
 
