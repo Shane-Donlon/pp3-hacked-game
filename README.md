@@ -645,3 +645,6 @@ Abbreviations used:
 - [Printing on same line python](https://www.tutorialspoint.com/how-to-print-in-same-line-in-python)
 - [Hacked Password List](https://parade.com/living/most-common-passwords)
 - [Wordle](https://www.nytimes.com/games/wordle/index.html) - Main inspiration for the game
+
+## Notes:
+Some notes regarding the commit messages: usually feat add style add etc.. is added as a preface to the commit messages, but since it is only python style add etc.. did not make sense
