@@ -32,7 +32,7 @@ printed as this white colour")
             print(f"{guessed[i]}", end="")
 
     help_array = []
-    SPECIAL_CHARACTERS = "[@_!#$%^&*()<>?}{~:]"
+    special_characters = "[@_!#$%^&*()<>?}{~:]"
 
     print("")
     print("")
@@ -41,7 +41,7 @@ printed as this white colour")
     print("letter (upper) = uppercase")
     print("letter (lower) = lowercase")
     print("Number = 0-9")
-    print(f"Special Character = {SPECIAL_CHARACTERS}")
+    print(f"Special Character = {special_characters}")
     print("")
     print("Help Reveal:")
     for i, _ in enumerate(correct_word):
@@ -52,7 +52,7 @@ printed as this white colour")
                 help_array.append("Letter (lower)")
         elif correct_word[i].isnumeric():
             help_array.append("Number")
-        elif correct_word[i] in SPECIAL_CHARACTERS:
+        elif correct_word[i] in special_characters:
             help_array.append("Special Character")
 
     for char in help_array:
@@ -123,7 +123,7 @@ def password_hacking_game(random_word):
     correct_letter = Back.GREEN
     letter_in_word = Back.YELLOW
     reset_colours = Style.RESET_ALL
-    SPECIAL_CHARACTERS = "[@_!#$%^&*()<>?}{~:]"
+    special_characters = "[@_!#$%^&*()<>?}{~:]"
     while True:
         print("")
         print("Enter help for assistance")
@@ -138,7 +138,7 @@ def password_hacking_game(random_word):
             print("letter (upper) = uppercase")
             print("letter (lower) = lowercase")
             print("Number = 0-9")
-            print(f"Special Character = {SPECIAL_CHARACTERS}")
+            print(f"Special Character = {special_characters}")
             print("")
             print("Help reveal below:")
             for i, _ in enumerate(random_word):
@@ -149,7 +149,7 @@ def password_hacking_game(random_word):
                         help_array.append("Letter (lower)")
                 elif random_word[i].isnumeric():
                     help_array.append("Number")
-                elif random_word[i] in SPECIAL_CHARACTERS:
+                elif random_word[i] in special_characters:
                     help_array.append("Special Character")
 
             for char in help_array:
