@@ -415,6 +415,7 @@ printed as this white colour")
 
 
 def main():
+    """ Main function calling other functions from modules"""
     while True:
         print("")
         print("Welcome")
