@@ -126,6 +126,33 @@ Example Output:
 - [GitHub](https://github.com/): Used to host the application source code.
 - [VSCode](https://code.visualstudio.com/) Visual Studio Code: used to edit the application source code.
 - [Heroku](https://www.heroku.com/): Used to host the application
+- [LucidChart](https://www.lucidchart.com/pages/) Used for diagrams
+
+## Workflows
+
+### Main menu
+
+![Main Menu Workflow](assets/documentation/main_menu_workflow.jpg)
+
+### Password Strength Checker
+
+![Password Strength Workflow](assets/documentation/password_strength_checker_workflow.jpg)
+
+### Password On List
+
+![Password on password list Workflow](assets/documentation/password_list_workflow.jpg)
+
+### Main Game
+
+![main Game Workflow](assets/documentation/main_game_workflow.jpg)
+
+### Leaderboard
+
+![Leader Board Workflow](assets/documentation/leader_board_workflow.jpg)
+
+### Password Generator
+
+![Password Generator Workflow](assets/documentation/create_password_workflow.jpg)
 
 ## Testing
 
