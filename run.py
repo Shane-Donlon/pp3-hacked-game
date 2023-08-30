@@ -26,6 +26,7 @@ def main():
         elif response == "4":
             password_generator()
         elif response == "q":
+            print("Exiting...")
             return False
         else:
             print("You have selected an incorrect option")
