@@ -1,3 +1,4 @@
+"""Import all packages and check if password is on hacked list"""
 from packages_global_vars import *
 
 

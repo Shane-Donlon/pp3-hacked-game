@@ -1,3 +1,4 @@
+"""Used in option 1 and option 4 for password strength checking"""
 from packages_global_vars import *
 
 
