@@ -65,16 +65,25 @@ It is comprised of
 5. The game will tell you the length of the password
 6. Input your guess into the game and await feedback
 7. Yellow feedback indicates that the characters are in the password but in the wrong location
-   - ![Site feedback for correct character wrong location](assets/documentation/yellow_feedback_guess.jpg)
+
+   ![Site feedback for correct character wrong location](assets/documentation/yellow_feedback_guess.jpg)
+
 8. White feedback indicates that the characters are not in the password
-   - ![Site feedback for character not in password](assets/documentation/white_feedback_guess.jpg)
+
+   ![Site feedback for character not in password](assets/documentation/white_feedback_guess.jpg)
+
 9. Green feedback (u in the bellow screenshot) indicates that the characters are in the password and the correct location
-   - ![Site feedback for correct character correct location](assets/documentation/green_feedback_guess.jpg)
+
+   ![Site feedback for correct character correct location](assets/documentation/green_feedback_guess.jpg)
+
 10. If you guessed all the characters in the correct location you will win the game
-    - ![Site feedback for winning the game](assets/documentation/win_feedback_game.jpg)
+
+    ![Site feedback for winning the game](assets/documentation/win_feedback_game.jpg)
+
 11. Enter your name to add your name to the leader-board, or select q to exit
 12. If you get stuck you can enter help as an option to reveal the password character types
-    - ![Site feedback for help function](assets/documentation/help_feedback_game.jpg)
+
+    ![Site feedback for help function](assets/documentation/help_feedback_game.jpg)
 
 ### Password Hacking Game Leader-board
 
@@ -84,10 +93,13 @@ It is comprised of
    - View Leader Board
    - Exit to main menu
 2. Input 4 and press enter
-3. You will then need to decide on the difficulty leaderboard to view
-   - ![Site feedback for leader board options](assets/documentation/leader_board_game_options.jpg)
+3. You will then need to decide on the difficulty leader board to view
+
+   ![Site feedback for leader board options](assets/documentation/leader_board_game_options.jpg)
+
 4. The desired leader board table will print (sorted lowest guesses to highest)
-   - ![Leader board printed in terminal](assets/documentation/leader_board_game_preview.jpg)
+
+   ![Leader board printed in terminal](assets/documentation/leader_board_game_preview.jpg)
 
 ### Password Generator
 
@@ -101,7 +113,7 @@ It is comprised of
 
 Example Output:
 
-- ![Password Generator output from terminal](assets/documentation/password_generator_output.jpg)
+![Password Generator output from terminal](assets/documentation/password_generator_output.jpg)
 
 ## Technologies used:
 
@@ -160,7 +172,7 @@ Example Output:
 
 No errors found
 
-- ![Python Linter Results](assets/documentation/automated_testing.jpg)
+![Python Linter Results](assets/documentation/automated_testing.jpg)
 
 ### Manual Testing
 
