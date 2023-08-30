@@ -2,6 +2,7 @@ from packages_global_vars import *
 
 
 def game_instructions():
+    """ Prints game instructions for user"""
     os.system('cls||clear')
     init(autoreset=True)
     RESET_COLOURS = Style.RESET_ALL
