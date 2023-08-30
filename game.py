@@ -5,7 +5,7 @@ def game_instructions():
     """ Prints game instructions for user"""
     os.system('cls||clear')
     init(autoreset=True)
-    RESET_COLOURS = Style.RESET_ALL
+    reset_colours = Style.RESET_ALL
     CORRECT_LETTER = "\033[32m"
     LETTER_IN_WORD = "\033[33m"
     correct_word = "Password12!"
@@ -17,17 +17,17 @@ password in the least amount of guesses")
     print("Incorrect length password tries and help commands \
 will not be considered a guess")
     print(f"Correct character in the correct place will be \
-highlighted in {CORRECT_LETTER}green {RESET_COLOURS}")
+highlighted in {CORRECT_LETTER}green {reset_colours}")
     print(f"The correct character in the wrong place will be \
-highlighted in {LETTER_IN_WORD}yellow {RESET_COLOURS}")
+highlighted in {LETTER_IN_WORD}yellow {reset_colours}")
     print("If the character is not in the word it will be\
 printed as this white colour")
     print("Enter q as a guess at any point to exit the game")
     for i, _ in enumerate(correct_word):
         if guessed[i] == correct_word[i]:
-            print(f"{CORRECT_LETTER}{guessed[i]}{RESET_COLOURS}", end="")
+            print(f"{CORRECT_LETTER}{guessed[i]}{reset_colours}", end="")
         elif guessed[i] in correct_word:
-            print(f"{LETTER_IN_WORD}{guessed[i]}{RESET_COLOURS}", end="")
+            print(f"{LETTER_IN_WORD}{guessed[i]}{reset_colours}", end="")
         else:
             print(f"{guessed[i]}", end="")
 
@@ -122,7 +122,7 @@ def password_hacking_game(random_word):
     print(f"The password is {len(random_word)} characters long")
     CORRECT_LETTER = "\033[32m"
     LETTER_IN_WORD = "\033[33m"
-    RESET_COLOURS = Style.RESET_ALL
+    reset_colours = Style.RESET_ALL
     SPECIAL_CHARACTERS = "[@_!#$%^&*()<>?}{~:]"
     while True:
         print("")
@@ -159,10 +159,10 @@ def password_hacking_game(random_word):
         elif len(random_word) == len(guess):
             for i, _ in enumerate(random_word):
                 if guess[i] == random_word[i]:
-                    print(f"{CORRECT_LETTER}{guess[i]}{RESET_COLOURS}", end="")
+                    print(f"{CORRECT_LETTER}{guess[i]}{reset_colours}", end="")
                     correct += 1
                 elif guess[i] in random_word:
-                    print(f"{LETTER_IN_WORD}{guess[i]}{RESET_COLOURS}", end="")
+                    print(f"{LETTER_IN_WORD}{guess[i]}{reset_colours}", end="")
                 else:
                     print(f"{guess[i]}", end="")
             number_of_guesses += 1
