@@ -10,7 +10,7 @@ def password_in_list(input_string):
         print("Please enter a valid password")
         new_input = getpass("Enter the password to check: ")
         password_in_list(new_input)
-    elif input_string == "q" or new_input == "q":
+    elif input_string == "q":
         return
     else:
         reset_colours = Style.RESET_ALL
