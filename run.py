@@ -1,6 +1,6 @@
 from packages_global_vars import *
 from game import *
-from password_generator import *
+from generating_password import *
 from password_on_list import *
 from password_checker_zxcvbn import *
 
