@@ -12,7 +12,7 @@ def password_checker(input_string):
         password_checker(new_input)
     else:
         # second includes "seconds" day includes "days" week includes "weeks"
-        RESET_COLOURS = Style.RESET_ALL
+        reset_colours = Style.RESET_ALL
         results = zxcvbn(input_string)
         results_in_time = results.get("crack_times_display").get(
             "online_throttling_100_per_hour")
@@ -21,21 +21,21 @@ def password_checker(input_string):
             or "hour" in results_in_time
             or "day" in results_in_time
                 or "week" in results_in_time):
-            FOREGROUND = Fore.WHITE
-            BACKGROUND = Back.RED
+            fore_ground = Fore.WHITE
+            back_ground = Back.RED
             # month includes "months year includes "years"
         elif "month" in results_in_time:
-            FOREGROUND = Fore.YELLOW
-            BACKGROUND = Back.BLACK
+            fore_ground = Fore.YELLOW
+            back_ground = Back.BLACK
         elif "year" in results_in_time:
-            FOREGROUND = Fore.GREEN
-            BACKGROUND = Back.WHITE
+            fore_ground = Fore.GREEN
+            back_ground = Back.WHITE
         else:
-            FOREGROUND = Fore.GREEN
-            BACKGROUND = Back.WHITE
+            fore_ground = Fore.GREEN
+            back_ground = Back.WHITE
 
         print(f"At a rate of 100 guesses per hour your password would \
-take {FOREGROUND}{BACKGROUND}{results_in_time}{RESET_COLOURS} to crack")
+take {fore_ground}{back_ground}{results_in_time}{reset_colours} to crack")
         # removing password from memory
         del results
         del results_in_time
