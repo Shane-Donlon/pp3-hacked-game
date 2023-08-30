@@ -28,8 +28,8 @@ def generate_random_word(data):
     a random word. The random word is then sent
     to password_hacking_game function"""
 
-    i = 0
-    while i < 3:
+
+    for i in range(3):
         word = random.choice(data)
         i += 1
     return word
