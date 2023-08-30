@@ -5,16 +5,6 @@ from password_on_list import *
 from password_checker_zxcvbn import *
 
 
-
-
-
-
-
-
-
-
-
-
 def main():
     while True:
         print("")
