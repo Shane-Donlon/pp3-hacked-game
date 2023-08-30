@@ -197,13 +197,6 @@ No errors found
 
 Command Prompt was used to run the application locally, and updates were tested again after deployment to Heroku
 
-Abbreviations used:
-
-- MM = Main Menu
-
-- PS = Password Strength Checking Tool (option 1 main menu)
-
-- PL = Password List (option 2 main menu)
 
 <table>
 <thead>
@@ -223,31 +216,31 @@ Abbreviations used:
     <td>Confirmed</td>
   </tr>
   <tr>
-    <td>MM Option 1</td>
+    <td>Main Menu Option 1</td>
     <td>User is presented with password strength checking tool</td>
     <td>User is presented with password strength checking tool</td>
     <td>Confirmed</td>
   </tr>
   <tr>
-    <td>MM Option 2</td>
+    <td>Main Menu Option 2</td>
     <td>User is presented with checking password against password list</td>
     <td>User is presented with checking password against password list</td>
     <td>Confirmed</td>
   </tr>
   <tr>
-    <td>MM Option 3</td>
+    <td>Main Menu Option 3</td>
     <td>User is presented with a game</td>
     <td>User is presented with a game</td>
     <td>Confirmed</td>
   </tr>
   <tr>
-    <td>MM Option 4</td>
+    <td>Main Menu Option 4</td>
     <td>User can create a new password</td>
     <td>User can create a new password</td>
     <td>Confirmed</td>
   </tr>
   <tr>
-    <td>MM Option Q</td>
+    <td>Main Menu Option Q</td>
     <td>Application ends</td>
     <td>Application ends</td>
     <td>Confirmed</td>
@@ -259,344 +252,344 @@ Abbreviations used:
     <td>Confirmed</td>
   </tr>
   <tr>
-    <td>PS</td>
+    <td>Password Strength</td>
     <td>User inputs a correct password to verify </td>
     <td>Password is verified with time to crack</td>
     <td>Confirmed</td>
   </tr>
   <tr>
-    <td>PS</td>
+    <td>Password Strength</td>
     <td>User inputs a 0 length password</td>
     <td>User is presented with error and asked to enter a correct password</td>
     <td>Confirmed</td>
   </tr>
   <tr>
-    <td>PL</td>
+    <td>Password List</td>
     <td>User inputs a correct on the list</td>
     <td>User is informed password is on the list</td>
     <td>Confirmed</td>
   </tr>  
   <tr>
-    <td>PL</td>
+    <td>Password List</td>
     <td>User inputs a password not on the list</td>
     <td>User is informed password is not on the list</td>
     <td>Confirmed</td>
   </tr>  
   <tr>
-    <td>PL</td>
+    <td>Password List</td>
     <td>User inputs a 0 length password</td>
     <td>User is presented with error and asked to enter a correct password</td>
     <td>Confirmed</td>
   </tr>  
   <tr>
-    <td>PG</td>
+    <td>Password Game</td>
     <td>User is presented with Difficulty menu</td>
     <td>User is presented with Difficulty menu</td>
     <td>Confirmed</td>
   </tr>  
   <tr>
-    <td>PG</td>
+    <td>Password Game</td>
     <td>user inputs easy</td>
     <td>Easy mode loads</td>
     <td>Confirmed</td>
   </tr>  
   <tr>
-    <td>PG</td>
+    <td>Password Game</td>
     <td>user inputs difficult</td>
     <td>Difficult mode loads</td>
     <td>Confirmed</td>
   </tr>  
   <tr>
-    <td>PG</td>
+    <td>Password Game</td>
     <td>user inputs hard</td>
     <td>Hard mode loads</td>
     <td>Confirmed</td>
   </tr>  
   <tr>
-    <td>PG</td>
+    <td>Password Game</td>
     <td>user inputs 4</td>
     <td>user is presented with leader board options</td>
     <td>Confirmed</td>
   </tr>
   <tr>
-    <td>PG Menu</td>
+    <td>Password Game Menu</td>
     <td>User inputs invalid option</td>
     <td>User presented with error and menu options</td>
     <td>Confirmed</td>
   </tr>  
   <tr>
-    <td>PG leader board</td>
+    <td>Password Game leader board</td>
     <td>user inputs 1</td>
     <td>Easy Leader board is presented</td>
     <td>Confirmed</td>
   </tr>  
   <tr>
-    <td>PG leader board</td>
+    <td>Password Game leader board</td>
     <td>user inputs 2</td>
     <td>Difficult Leader board is presented</td>
     <td>Confirmed</td>
   </tr>  
   <tr>
-    <td>PG leader board</td>
+    <td>Password Game leader board</td>
     <td>user inputs 3</td>
     <td>Hard Leader board is presented</td>
     <td>Confirmed</td>
   </tr>   
   <tr>
-    <td>PG leader board</td>
+    <td>Password Game leader board</td>
     <td>user inputs q</td>
     <td>User exists current menu</td>
     <td>Confirmed</td>
   </tr>
   <tr>
-    <td>PG Easy</td>
+    <td>Password Game Easy</td>
     <td>User is presented with game instructions</td>
     <td>User is presented with game instructions</td>
     <td>Confirmed</td>
   </tr>  
   <tr>
-    <td>PG Difficult</td>
+    <td>Password Game Difficult</td>
     <td>User is presented with game instructions</td>
     <td>User is presented with game instructions</td>
     <td>Confirmed</td>
   </tr>  
   <tr>
-    <td>PG Hard</td>
+    <td>Password Game Hard</td>
     <td>User is presented with game instructions</td>
     <td>User is presented with game instructions</td>
     <td>Confirmed</td>
   </tr>  
   <tr>
-    <td>PG Easy</td>
+    <td>Password Game Easy</td>
     <td>User inputs guess q</td>
     <td>Game ends</td>
     <td>Confirmed</td>
   </tr>  
   <tr>
-    <td>PG Difficult</td>
+    <td>Password Game Difficult</td>
     <td>User inputs guess q</td>
     <td>Game ends</td>
     <td>Confirmed</td>
   </tr>  
   <tr>
-    <td>PG Hard</td>
+    <td>Password Game Hard</td>
     <td>User inputs guess q</td>
     <td>Game ends</td>
     <td>Confirmed</td>
   </tr>  
   <tr>
-    <td>PG Easy</td>
+    <td>Password Game Easy</td>
     <td>User inputs guess help</td>
     <td>User is presented with help options (as above)</td>
     <td>Confirmed</td>
   </tr>   
   <tr>
-    <td>PG Difficult</td>
+    <td>Password Game Difficult</td>
     <td>User inputs guess help</td>
     <td>User is presented with help options (as above)</td>
     <td>Confirmed</td>
   </tr>   
   <tr>
-    <td>PG Hard</td>
+    <td>Password Game Hard</td>
     <td>User inputs guess help</td>
     <td>User is presented with help options (as above)</td>
     <td>Confirmed</td>
   </tr>   
   <tr>
-    <td>PG Easy</td>
+    <td>Password Game Easy</td>
     <td>User inputs a guess too short</td>
     <td>Error to inform user of this appears</td>
     <td>Confirmed</td>
   </tr>  
   <tr>
-    <td>PG Easy</td>
+    <td>Password Game Easy</td>
     <td>User inputs a guess too long</td>
     <td>Error to inform user of this appears</td>
     <td>Confirmed</td>
   </tr>  
   <tr>
-    <td>PG Easy</td>
+    <td>Password Game Easy</td>
     <td>Guess is the correct length with incorrect characters</td>
     <td>Printed guess characters in default white</td>
     <td>Confirmed</td>
   </tr>  
   <tr>
-    <td>PG Easy</td>
+    <td>Password Game Easy</td>
     <td>Guess is the correct length with correct letters in wrong place</td>
     <td>Printed guess characters in yellow</td>
     <td>Confirmed</td>
   </tr>  
   <tr>
-    <td>PG Easy</td>
+    <td>Password Game Easy</td>
     <td>Guess is the correct length with correct letters in correct place</td>
     <td>Printed guess characters in green</td>
     <td>Confirmed</td>
   </tr>
   <tr>
-    <td>PG Difficult</td>
+    <td>Password Game Difficult</td>
     <td>User inputs a guess too short</td>
     <td>Error to inform user of this appears</td>
     <td>Confirmed</td>
   </tr>  
   <tr>
-    <td>PG Difficult</td>
-    <td>User inputs a guess too long</td>
-    <td>Error to inform user of this appears</td>
-    <td>Confirmed</td>
-  </tr> 
-  <tr>
-    <td>PG Difficult</td>
-    <td>Guess is the correct length with incorrect characters</td>
-    <td>Printed guess characters in default white</td>
-    <td>Confirmed</td>
-  </tr>  
-  <tr>
-    <td>PG Difficult</td>
-    <td>Guess is the correct length with correct letters in wrong place</td>
-    <td>Printed guess characters in yellow</td>
-    <td>Confirmed</td>
-  </tr>  
-  <tr>
-    <td>PG Difficult</td>
-    <td>Guess is the correct length with correct letters in correct place</td>
-    <td>Printed guess characters in green</td>
-    <td>Confirmed</td>
-  </tr>
-  <tr>
-    <td>PG Hard</td>
-    <td>User inputs a guess too short</td>
-    <td>Error to inform user of this appears</td>
-    <td>Confirmed</td>
-  </tr>  
-  <tr>
-    <td>PG Hard</td>
+    <td>Password Game Difficult</td>
     <td>User inputs a guess too long</td>
     <td>Error to inform user of this appears</td>
     <td>Confirmed</td>
   </tr> 
   <tr>
-    <td>PG Hard</td>
+    <td>Password Game Difficult</td>
     <td>Guess is the correct length with incorrect characters</td>
     <td>Printed guess characters in default white</td>
     <td>Confirmed</td>
   </tr>  
   <tr>
-    <td>PG Hard</td>
+    <td>Password Game Difficult</td>
     <td>Guess is the correct length with correct letters in wrong place</td>
     <td>Printed guess characters in yellow</td>
     <td>Confirmed</td>
   </tr>  
   <tr>
-    <td>PG Hard</td>
+    <td>Password Game Difficult</td>
     <td>Guess is the correct length with correct letters in correct place</td>
     <td>Printed guess characters in green</td>
     <td>Confirmed</td>
   </tr>
   <tr>
-    <td>PG User wins Easy</td>
+    <td>Password Game Hard</td>
+    <td>User inputs a guess too short</td>
+    <td>Error to inform user of this appears</td>
+    <td>Confirmed</td>
+  </tr>  
+  <tr>
+    <td>Password Game Hard</td>
+    <td>User inputs a guess too long</td>
+    <td>Error to inform user of this appears</td>
+    <td>Confirmed</td>
+  </tr> 
+  <tr>
+    <td>Password Game Hard</td>
+    <td>Guess is the correct length with incorrect characters</td>
+    <td>Printed guess characters in default white</td>
+    <td>Confirmed</td>
+  </tr>  
+  <tr>
+    <td>Password Game Hard</td>
+    <td>Guess is the correct length with correct letters in wrong place</td>
+    <td>Printed guess characters in yellow</td>
+    <td>Confirmed</td>
+  </tr>  
+  <tr>
+    <td>Password Game Hard</td>
+    <td>Guess is the correct length with correct letters in correct place</td>
+    <td>Printed guess characters in green</td>
+    <td>Confirmed</td>
+  </tr>
+  <tr>
+    <td>Password Game User wins Easy</td>
     <td>User has guessed the correct word</td>
     <td>Whole word appears in green</td>
     <td>Confirmed</td>
   </tr>  
   <tr>
-    <td>PG User wins Difficult</td>
+    <td>Password Game User wins Difficult</td>
     <td>User has guessed the correct word</td>
     <td>Whole word appears in green</td>
     <td>Confirmed</td>
   </tr>  
   <tr>
-    <td>PG User wins Hard</td>
+    <td>Password Game User wins Hard</td>
     <td>User has guessed the correct word</td>
     <td>Whole word appears in green</td>
     <td>Confirmed</td>
   </tr>  
   <tr>
-    <td>PG User Wins Easy</td>
+    <td>Password Game User Wins Easy</td>
     <td>User is asked to enter name</td>
     <td>User is asked to enter name</td>
     <td>Confirmed</td>
   </tr> 
     <tr>
-    <td>PG User Wins Easy</td>
+    <td>Password Game User Wins Easy</td>
     <td>User enters a 0 length name</td>
     <td>Error message is displayed and asked for a name</td>
     <td>Confirmed</td>
   </tr>
   <tr>
-    <td>PG User Wins Easy</td>
+    <td>Password Game User Wins Easy</td>
     <td>User enters q as name</td>
     <td>User returns to menu skipping leader board</td>
     <td>Confirmed</td>
   </tr>  
   <tr>
-    <td>PG User Wins Easy</td>
+    <td>Password Game User Wins Easy</td>
     <td>User enters a legitimate name not already on list</td>
     <td>leader board is updated</td>
     <td>Confirmed</td>
   </tr>  
   <tr>
-    <td>PG User Wins Easy</td>
+    <td>Password Game User Wins Easy</td>
     <td>User enters a legitimate name already on list</td>
     <td>error stating name is already on list appears and asked for a new name</td>
     <td>Confirmed</td>
   </tr>
 
 <tr>
-    <td>PG User Wins Difficult</td>
+    <td>Password Game User Wins Difficult</td>
     <td>User is asked to enter name</td>
     <td>User is asked to enter name</td>
     <td>Confirmed</td>
   </tr> 
     <tr>
-    <td>PG User Wins Difficult</td>
+    <td>Password Game User Wins Difficult</td>
     <td>User enters a 0 length name</td>
     <td>Error message is displayed and asked for a name</td>
     <td>Confirmed</td>
   </tr>
   <tr>
-    <td>PG User Wins Difficult</td>
+    <td>Password Game User Wins Difficult</td>
     <td>User enters q as name</td>
     <td>User returns to menu skipping leader board</td>
     <td>Confirmed</td>
   </tr>  
   <tr>
-    <td>PG User Wins Difficult</td>
+    <td>Password Game User Wins Difficult</td>
     <td>User enters a legitimate name not already on list</td>
     <td>leader board is updated</td>
     <td>Confirmed</td>
   </tr>  
   <tr>
-    <td>PG User Wins Difficult</td>
+    <td>Password Game User Wins Difficult</td>
     <td>User enters a legitimate name already on list</td>
     <td>error stating name is already on list appears and asked for a new name</td>
     <td>Confirmed</td>
   </tr>  
 <tr>
-    <td>PG User Wins Hard</td>
+    <td>Password Game User Wins Hard</td>
     <td>User is asked to enter name</td>
     <td>User is asked to enter name</td>
     <td>Confirmed</td>
   </tr>  
   <tr>
-    <td>PG User Wins Hard</td>
+    <td>Password Game User Wins Hard</td>
     <td>User enters q as name</td>
     <td>User returns to menu skipping leader board</td>
     <td>Confirmed</td>
   </tr>  
   <tr>
-    <td>PG User Wins Hard</td>
+    <td>Password Game User Wins Hard</td>
     <td>User enters a legitimate name not already on list</td>
     <td>leader board is updated</td>
     <td>Confirmed</td>
   </tr>
   <tr>
-    <td>PG User Wins Hard</td>
+    <td>Password Game User Wins Hard</td>
     <td>User enters a 0 length name</td>
     <td>Error message is displayed and asked for a name</td>
     <td>Confirmed</td>
   </tr>  
   <tr>
-    <td>PG User Wins Hard</td>
+    <td>Password Game User Wins Hard</td>
     <td>User enters a legitimate name already on list</td>
     <td>error stating name is already on list appears and asked for a new name</td>
     <td>Confirmed</td>
