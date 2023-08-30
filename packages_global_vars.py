@@ -6,7 +6,7 @@ from colorama import Fore, Back, Style, init
 from zxcvbn import zxcvbn
 from getpass import getpass
 from tabulate import tabulate
-from password_generator import *
+from password_generator import PasswordGenerator
 
 SCOPE = [
     "https://www.googleapis.com/auth/spreadsheets",
