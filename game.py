@@ -20,7 +20,7 @@ will not be considered a guess")
 highlighted in {CORRECT_LETTER}green {RESET_COLOURS}")
     print(f"The correct character in the wrong place will be \
 highlighted in {LETTER_IN_WORD}yellow {RESET_COLOURS}")
-    print(f"If the character is not in the word it will be\
+    print("If the character is not in the word it will be\
 printed as this white colour")
     print("Enter q as a guess at any point to exit the game")
     for i, _ in enumerate(correct_word):
