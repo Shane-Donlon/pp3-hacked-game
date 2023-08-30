@@ -1,5 +1,5 @@
 from packages_global_vars import *
-from password_checker import password_checker
+from password_checker_zxcvbn import password_checker
 
 def password_generator():
     """Used to generate password based on user input
