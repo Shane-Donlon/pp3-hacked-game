@@ -6,8 +6,8 @@ def game_instructions():
     os.system('cls||clear')
     init(autoreset=True)
     reset_colours = Style.RESET_ALL
-    CORRECT_LETTER = "\033[32m"
-    LETTER_IN_WORD = "\033[33m"
+    correct_letter = "\033[32m"
+    letter_in_word = "\033[33m"
     correct_word = "Password12!"
     guessed = "Pass12!orxy"
     print("The objective of the game is to correctly guess the hacked\
@@ -17,17 +17,17 @@ password in the least amount of guesses")
     print("Incorrect length password tries and help commands \
 will not be considered a guess")
     print(f"Correct character in the correct place will be \
-highlighted in {CORRECT_LETTER}green {reset_colours}")
+highlighted in {correct_letter}green {reset_colours}")
     print(f"The correct character in the wrong place will be \
-highlighted in {LETTER_IN_WORD}yellow {reset_colours}")
+highlighted in {letter_in_word}yellow {reset_colours}")
     print("If the character is not in the word it will be\
 printed as this white colour")
     print("Enter q as a guess at any point to exit the game")
     for i, _ in enumerate(correct_word):
         if guessed[i] == correct_word[i]:
-            print(f"{CORRECT_LETTER}{guessed[i]}{reset_colours}", end="")
+            print(f"{correct_letter}{guessed[i]}{reset_colours}", end="")
         elif guessed[i] in correct_word:
-            print(f"{LETTER_IN_WORD}{guessed[i]}{reset_colours}", end="")
+            print(f"{letter_in_word}{guessed[i]}{reset_colours}", end="")
         else:
             print(f"{guessed[i]}", end="")
 
@@ -58,7 +58,7 @@ printed as this white colour")
     for char in help_array:
         print(f"{char}, ", end="")
     print("")
-    print(f"Correct Word = {CORRECT_LETTER}{correct_word}")
+    print(f"Correct Word = {correct_letter}{correct_word}")
     input("Press enter to continue")
     os.system('cls||clear')
 
@@ -120,8 +120,8 @@ def password_hacking_game(random_word):
     init(autoreset=True)
     number_of_guesses = 0
     print(f"The password is {len(random_word)} characters long")
-    CORRECT_LETTER = "\033[32m"
-    LETTER_IN_WORD = "\033[33m"
+    correct_letter = Back.GREEN
+    letter_in_word = Back.YELLOW
     reset_colours = Style.RESET_ALL
     SPECIAL_CHARACTERS = "[@_!#$%^&*()<>?}{~:]"
     while True:
@@ -159,10 +159,10 @@ def password_hacking_game(random_word):
         elif len(random_word) == len(guess):
             for i, _ in enumerate(random_word):
                 if guess[i] == random_word[i]:
-                    print(f"{CORRECT_LETTER}{guess[i]}{reset_colours}", end="")
+                    print(f"{correct_letter}{guess[i]}{reset_colours}", end="")
                     correct += 1
                 elif guess[i] in random_word:
-                    print(f"{LETTER_IN_WORD}{guess[i]}{reset_colours}", end="")
+                    print(f"{letter_in_word}{guess[i]}{reset_colours}", end="")
                 else:
                     print(f"{guess[i]}", end="")
             number_of_guesses += 1
