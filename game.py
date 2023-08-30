@@ -70,7 +70,7 @@ def set_difficulty():
         print("Easy")
         print("Difficult")
         print("Hard")
-        print("press 4 to view the leaderboard")
+        print("press 4 to view the leader board")
         print("press q to exit")
         input_string = input(
             "What difficulty do you want to set?").lower().strip()
@@ -200,7 +200,7 @@ def leaderboard(number_of_tries, skill_level):
     while True:
         print("press q to skip")
         input_name = input(
-            "Enter your Name to add to leaderboard").lower().strip()
+            "Enter your Name to add to leader board").lower().strip()
         print(input_name)
         if input_name == "q":
             return False
@@ -237,9 +237,9 @@ def get_leaderboard():
     display_leaderboard function """
     running = True
     while running:
-        print('Press 1 to see the "Easy" leaderboard')
-        print('Press 2 to see the "Difficult" leaderboard')
-        print('Press 3 to see the "Hard" leaderboard')
+        print('Press 1 to see the "Easy" leader board')
+        print('Press 2 to see the "Difficult" leader board')
+        print('Press 3 to see the "Hard" leader board')
         print('Press q to return to the menu')
         selection = input("Enter your selection here: ").lower().strip()
         leaderboard_raw_data = leaderboard_sheet.get_all_values()[1:]
