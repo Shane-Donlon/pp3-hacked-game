@@ -11,6 +11,7 @@ def password_in_list(input_string):
         new_input = getpass("Enter the password to check: ")
         password_in_list(new_input)
     elif input_string == "q":
+        print("Exiting...")
         return
     else:
         reset_colours = Style.RESET_ALL
