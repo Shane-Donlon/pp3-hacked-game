@@ -189,7 +189,6 @@ def game():
     else:
         game_instructions()
         os.system('cls||clear')
-        print(f"pa{password_array}")
         random_word = generate_random_word(password_array)
         password_hacking_game(random_word)
 
