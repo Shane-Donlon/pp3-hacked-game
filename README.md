@@ -171,8 +171,27 @@ Example Output:
 ### Automated Testing
 
 No errors found
+- run.py module
 
-![Python Linter Results](assets/documentation/automated_testing.jpg)
+![Python Linter Results for run.py file](assets/documentation/pep8_run_file.jpg)
+
+- password_on_list.py module
+
+![Python Linter Results for password_on_list.py file](assets/documentation/pep8_packages_file.jpg)
+
+- password_checker_zxcvbn.py module
+
+![Python Linter Results for password_on_password_checker_zxcvbn.py file](assets/documentation/pep8_password_checker_file.jpg)
+
+- password_global_vars.py module
+![Python Linter Results for password_on_password_global_vars.py file](assets/documentation/pep8_global_vars_file.jpg)
+
+- generating_password.py module
+![Python Linter Results for password_on_generating_password.py  file](assets/documentation/pep8_generating_file.jpg)
+
+- game.py module
+![Python Linter Results for password_on_generating_password.py  file](assets/documentation/pep8_game_file.jpg)
+
 
 ### Manual Testing
 
