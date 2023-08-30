@@ -10,7 +10,7 @@ def password_in_list(input_string):
         new_input = getpass("Enter the password to check: ")
         password_in_list(new_input)
     else:
-        RESET_COLOURS = Style.RESET_ALL
+        reset_colours = Style.RESET_ALL
         on_list = False
         for password in PASSWORDS_DATA:
             if input_string == password:
@@ -22,13 +22,13 @@ def password_in_list(input_string):
                 on_list = True
 
         if on_list is True:
-            print(f"{BACKGROUND}Your password is on the list{RESET_COLOURS}")
+            print(f"{BACKGROUND}Your password is on the list{reset_colours}")
             print(f"{BACKGROUND}Please consider changing your\
-password {RESET_COLOURS}")
+password {reset_colours}")
         else:
             BACKGROUND = Back.GREEN
             print(f"{BACKGROUND}Your password is NOT on the list\
-{RESET_COLOURS}")
+{reset_colours}")
 
     print("Deleting password")
     del input_string
