@@ -61,6 +61,7 @@ printed as this white colour")
     input("Press enter to continue")
     os.system('cls||clear')
 
+
 def set_difficulty():
     """Creates an array of words based on the
     Google sheet data, to pass into generate_random_word function"""
@@ -104,12 +105,10 @@ def generate_random_word(data):
     a random word. The random word is then sent
     to password_hacking_game function"""
 
-
     for i in range(3):
         word = random.choice(data)
         i += 1
     return word
-
 
 
 def password_hacking_game(random_word):
@@ -179,7 +178,8 @@ def password_hacking_game(random_word):
             print("Your guess word is not long enough")
         elif len(guess) > len(random_word):
             print("Your guess word is too long")
-            
+
+
 def game():
     """Orders functions for the password_hacking_game"""
     password_array = set_difficulty()
@@ -191,6 +191,7 @@ def game():
         print(f"pa{password_array}")
         random_word = generate_random_word(password_array)
         password_hacking_game(random_word)
+
 
 def leaderboard(number_of_tries, skill_level):
     """Validates user input against Google Sheets
