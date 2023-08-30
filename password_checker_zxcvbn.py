@@ -11,7 +11,7 @@ def password_checker(input_string):
         print("Please enter a valid password")
         new_input = getpass("Enter the password to check: ")
         password_checker(new_input)
-    elif input_string == "q" or new_input == "q":
+    elif input_string == "q":
         return
     else:
         # second includes "seconds" day includes "days" week includes "weeks"
