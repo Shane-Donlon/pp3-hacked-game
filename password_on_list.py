@@ -9,29 +9,31 @@ def password_in_list(input_string):
         print("Please enter a valid password")
         new_input = getpass("Enter the password to check: ")
         password_in_list(new_input)
+    elif input_string == "q" or new_input == "q":
+        return
     else:
         reset_colours = Style.RESET_ALL
         on_list = False
         for password in PASSWORDS_DATA:
             if input_string == password:
-                BACKGROUND = Back.RED
+                back_ground = Back.RED
                 on_list = True
         for password in AMER_PASSWORDS:
-            BACKGROUND = Back.RED
+            back_ground = Back.RED
             if input_string == password:
                 on_list = True
 
         if on_list is True:
-            print(f"{BACKGROUND}Your password is on the list{reset_colours}")
-            print(f"{BACKGROUND}Please consider changing your\
+            print(f"{back_ground}Your password is on the list{reset_colours}")
+            print(f"{back_ground}Please consider changing your\
 password {reset_colours}")
         else:
-            BACKGROUND = Back.GREEN
-            print(f"{BACKGROUND}Your password is NOT on the list\
+            back_ground = Back.GREEN
+            print(f"{back_ground}Your password is NOT on the list\
 {reset_colours}")
 
-    print("Deleting password")
-    del input_string
-    print("Your password has been deleted")
-    input("Press enter to continue")
-    os.system('cls||clear')
+        print("Deleting password")
+        del input_string
+        print("Your password has been deleted")
+        input("Press enter to continue")
+        os.system('cls||clear')
