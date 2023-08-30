@@ -605,6 +605,19 @@ Abbreviations used:
     <td>User enters a 0 or 1 length password</td>
     <td>User is presented with error and instructions</td>
     <td>Confirmed</td>
+    </tr>
+   <tr>
+    <td>Google Sheets data reads</td>
+    <td>Password List reads from Google Sheets</td>
+    <td>Password options are in the game</td>
+    <td>Confirmed</td>
+    </tr>
+   <tr>
+    <td>Google Sheets data writes</td>
+    <td>Leader board stats updates</td>
+    <td>Leader board stats updates</td>
+    <td>Confirmed</td>
+    </tr>
 </tbody>
 </table>
 
