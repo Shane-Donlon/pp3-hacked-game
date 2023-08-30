@@ -1,3 +1,4 @@
+"""Main file to be used"""
 from packages_global_vars import *
 from game import *
 from generating_password import *
@@ -6,6 +7,7 @@ from password_checker_zxcvbn import *
 
 
 def main():
+    """Calls main menu and all module fucntions"""
     while True:
         print("")
         print("Welcome")
