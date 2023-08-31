@@ -641,3 +641,34 @@ Command Prompt was used to run the application locally, and updates were tested 
 
 ## Notes:
 Some notes regarding the commit messages: usually feat add style add etc.. is added as a preface to the commit messages, but since it is only python style add etc.. did not make sense
+
+## Deployment:
+This application is deployed on Heroku using the below instructions
+
+1. Login to heroku
+2. Create a new app
+   
+   ![Create new app Heroku](assets/documentation/heroku_new_app.jpg)
+   
+3.Complete App Name form
+
+   ![Heroku App Name form](assets/documentation/heroku_app_name.jpg)
+   
+4. Deploy using github
+
+   ![Heroku Github connected](assets/documentation/heroku_deploy_github.jpg)
+   
+5. Connected to main brach (this was connected to a testing branch for testing purposes)
+   
+   ![Heroku connected to Github main Branch](assets/documentation/heroku_deployment_main_branch.jpg)
+   
+7. Added CREDS to the Config Vars (the value is hidden intentionally)
+   
+   ![creds config vars Heroku](assets/documentation/creds_config_vars.jpg)
+   
+8. Set port to 8000 as required for the terminal to run correctly
+   
+   ![Port config vars heroku](assets/documentation/port_config_vars.jpg)
+
+9. Enable automatic deployments from Branch Main
+10. Deploy Manually
