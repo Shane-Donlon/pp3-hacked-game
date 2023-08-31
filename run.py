@@ -7,7 +7,7 @@ from password_checker_zxcvbn import *
 
 
 def main():
-    """Calls main menu and all module fucntions"""
+    """Calls main menu and all module functions"""
     while True:
         print("")
         print("Welcome")
