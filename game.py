@@ -127,7 +127,7 @@ def password_hacking_game(random_word):
         print("")
         print("Enter help for assistance")
         correct = 0
-        guess = input("\nWhat is your guess?")
+        guess = input("\nWhat is your guess? ")
 
         if guess == "q":
             return False
