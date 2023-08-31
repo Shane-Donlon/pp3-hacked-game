@@ -640,7 +640,8 @@ Command Prompt was used to run the application locally, and updates were tested 
 - [Wordle](https://www.nytimes.com/games/wordle/index.html) - Main inspiration for the game
 
 ## Notes:
-Some notes regarding the commit messages: usually feat add style add etc.. is added as a preface to the commit messages, but since it is only python style add etc.. did not make sense
+- Commit messages: usually feat add style add etc.. is added as a preface to the commit messages, but since it is only python style add etc.. did not make sense to preface every commit with "Pyhon" for an entirely python project.
+- Wildcard imports as the functions are bespoke built by me I used a wildcard import "*" to import the modules, if this wasn't the case I would import selected modules only / functions only
 
 ## Deployment:
 This application is deployed on Heroku using the below instructions
@@ -672,3 +673,10 @@ This application is deployed on Heroku using the below instructions
 
 9. Enable automatic deployments from Branch Main
 10. Deploy Manually
+
+## Bugs
+### Unfixed
+- When resizing the terminal screen the text vanishes from the terminal, this is from the Template used and is not due to my code
+
+No other bugs noted during testing
+
