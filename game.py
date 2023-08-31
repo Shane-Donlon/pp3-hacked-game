@@ -6,8 +6,8 @@ def game_instructions():
     os.system('cls||clear')
     init(autoreset=True)
     reset_colours = Style.RESET_ALL
-    correct_letter = "\033[32m"
-    letter_in_word = "\033[33m"
+    correct_letter = Back.GREEN
+    letter_in_word = Back.YELLOW
     correct_word = "Password12!"
     guessed = "Pass12!orxy"
     print("The objective of the game is to correctly guess the hacked\
@@ -74,7 +74,7 @@ def set_difficulty():
         print("press 4 to view the leader board")
         print("press q to exit")
         input_string = input(
-            "What difficulty do you want to set?").lower().strip()
+            "What difficulty do you want to set? ").lower().strip()
         new_array = []
         if input_string == "easy":
             for i in PASSWORDS_DATA:
